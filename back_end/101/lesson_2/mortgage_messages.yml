@@ -1,0 +1,15 @@
+welcome: "Welcome to the Mortgage Calculator! Please state your name:"
+invalid_name: "That's not a name! Please try again."
+amount: "What is the loan amount in USD?"
+invalid_amount: "Sorry, only positive numbers are allowed."
+apr: "What is the Annual Percentage Rate (APR)? \nFor example: for 7% use 7, or for 2.7% use 2.7."
+invalid_apr: "Sorry, only positive numbers are allowed."
+years: "What is the loan duration in years?"
+invalid_years: "Sorry, only positive numbers are allowed."
+invalid_answer: "Please only type y or n."
+calc_again: "Would you like to perform another calculation?"
+
+  
+  
+
+  

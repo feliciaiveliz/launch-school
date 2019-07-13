@@ -1,0 +1,14 @@
+en:
+  welcome: "Welcome to Calculator! Please enter your name:"
+  invalid_name: "No empty spaces are allowed. Please use only letters."
+  first_num: "What's the first number?"
+  verify_first: "Sorry, that's an invalid number."
+  second_num: "What's the second number?"
+  verify_second: "Sorry, that's an invalid number."
+  operation: "What operation would you like to perform?\n1) Add\n2) Subtract\n3) Multiply\n4) Divide"
+  invalid_op: "Sorry, you must choose 1, 2, 3, or 4"
+  calculate: "Would you like to perform another calculation? Please type y or n."
+  invalid_calculate: "Sorry, you must type y or n."
+  goodbye_message: "Thank you for using Calculator! Good-bye!"
+
+
