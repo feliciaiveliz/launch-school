@@ -1,0 +1,260 @@
+Question 1: Let's do some "ASCII Art" (a stone-age form of nerd artwork from back in the days before computers had video screens).
+For this practice problem, write a one-line program that creates the following output 10 times, with the subsequent line indented 1 space to the right:
+
+Input: 
+- The Flintstones Rock!
+
+Output: 
+- The Flintstones Rock!
+   The Flintstones Rock!
+    The Flintstone Rock!
+    
+Rules:
+- program must be one-liner
+- subsequent lines after first must be indented 1 space to the right
+  - for the first line, add 1 space
+  - for second line, add 2 spaces
+  - for third line, add 3 spaces
+  - etc.
+  
+Data Structure:
+- times method
+
+Algorithm:
+- create times method 
+  - this will print string 10 times - 10.times { "The Flintstones Rock!" }
+  - |number| will hold current iteration number and this will be used for spaces
+  - the number of spaces depends on the which iteration we're on
+    - Line 1, 1 space; Line 2, 2 spaces; Line 3, 3 spaces, etc.
+    - Use multiplication - " " * number (|number|)
+    - use prepend method to add this to beginning of string
+- end method
+
+10.times { |number| puts "The Flintstones Rock!".prepend(" " * number) }
+
+*************************************************************************************
+
+Question 2: The result of the following statement will be an error:
+
+puts "the value of 40 + 2 is + " + (40 + 2)
+
+- Why is this and what are two possible ways to fix this?
+
+1. You can't add a string and integer operation together unless you use string interpolation
+puts "the value of 40 + 2 is #{40 + 2}"
+
+- Or: 
+sum = 40 + 2
+puts "the value of 40 + 2 is #{sum}"
+
+*************************************************************************************
+
+Question 3: Alan wrote the following method, which was intended to show all of the factors of the input number:
+
+def factors(number)
+  divisor = number
+  factors = []
+  begin
+    factors << number / divisor if number % divisor == 0
+    divisor -= 1
+  end until divisor == 0
+  factors
+end
+
+- Alyssa noticed that this will fail if the input is 0, or a negative number, and asked Alan to change the loop. How can you make this work without using begin/end/until? Note that we're not looking to find the factors for 0 or negative numbers, but we just want to handle it gracefully instead of raising an exception or going into an infinite loop.
+
+- My solution:
+
+def factors(number)
+  divisor = number
+  factors = []
+  loop do 
+    if number <= 0
+      puts number
+      break
+    else
+      factors << number / divisor if number % divisor == 0
+      divisor -= 1
+      break if divisor == 0
+    end
+  end
+  factors
+end
+
+- Launch School solution
+
+def factors(number)
+  divisor = number
+  factors = []
+while divisor > 0 do 
+  factors << number / divisor if number % divisor == 0
+  divisor -= 1
+end
+factors
+end
+
+puts factors(-4)
+
+Bonus 1: What is the purpose of the number % divisor == 0?
+- This determines if a factor divides evely into its number. If the result is 0, it even divides and is a factor. If it's 1 or higher, it does not divide evenly, therefore it is not a factor
+
+Bonus 2: What is the purpose of line 8 in the method (the factors before the method's end)
+- This is the last line of the factors method, so this determines the return result of the method. This simply returns to use the factors array of numbers. Without this, or a explicit 'return' statement somewhere in the code, it would return nil.
+
+******************************************************************************************************************************************************************************************************************************************************
+
+Question 4: Alyssa was asked to write an implementation of a rolling buffer. Elements are added to the rolling buffer and if the buffer becomes full, then new elements that are added will displace the oldest elements in the buffer.
+
+- She wrote two implementations saying, "Take your pick. Do you like << or + for modifying the buffer?". Is there a difference between the two, other than what operator she chose to use to add an element to the buffer?
+
+def rolling_buffer1(buffer, max_buffer_size, new_element)
+  buffer << new_element
+  buffer.shift if buffer.size > max_buffer_size
+  buffer
+end
+
+def rolling_buffer2(input_array, max_buffer_size, new_element)
+  buffer = input_array + [new_element]
+  buffer.shift if buffer.size > max_buffer_size
+  buffer
+end
+
+- << modifies the original 'buffer' argument in that it pushes the new elements to buffer argument and that it was is returned at the end.
+- + is concatenation, or adding. This is creating a new array and in the second example, input_array (which is the array that is being added to) is saved to the buffer, which is then what is returned at the end. 
+
+*******************************************************************************************************************************************************************************************************************
+
+Question 5: Alyssa asked Ben to write up a basic implementation of a Fibonacci calculator, A user passes in two numbers, and the calculator will keep computing the sequence until some limit is reached.
+
+- Ben coded up this implementation but complained that as soon as he ran it, he got an error. Something about the limit variable. What's wrong with the code?
+
+- You can define limit inside the method definition so that it is available for it to use:
+
+def fib(first_num, second_num)
+  limit = 15
+  while first_num + second_num < limit
+    sum = first_num + second_num
+    first_num = second_num
+    second_num = sum
+  end
+  sum
+end
+
+result = fib(0, 1)
+puts "result is #{result}"
+
+- Or, make limit an additional argument to the definition of the fib method and pass it in when you call fib. (LS)
+
+limit = 15
+
+def fib(first_num, second_num, limit)
+  while first_num + second_num < limit
+    sum = first_num + second_num
+    first_num = second_num
+    second_num = sum
+  end
+  sum
+end
+
+result = fib(0, 1, limit)
+puts "result is #{result}"
+
+*******************************************************************************************************************
+
+Question 6: What is the output of the following code?
+
+answer = 42
+
+def mess_with_it(some_number)
+  some_number += 8
+end
+
+new_answer = mess_with_it(answer)
+
+p answer - 8
+
+- 34
+
+*******************************************************************************************************************
+
+Question 7: One day Spot was playing with the Munster family's home computer and he wrote a small program to mess with their demographic data:
+
+munsters = {
+  "Herman" => { "age" => 32, "gender" => "male" },
+  "Lily" => { "age" => 30, "gender" => "female" },
+  "Grandpa" => { "age" => 402, "gender" => "male" },
+  "Eddie" => { "age" => 10, "gender" => "male" },
+  "Marilyn" => { "age" => 23, "gender" => "female"}
+}
+
+def mess_with_demographics(demo_hash)
+  demo_hash.values.each do |family_member|
+    family_member["age"] += 42
+    family_member["gender"] = "other"
+  end
+end
+
+- After writing this method, he typed the following...and before Grandpa could stop him, he hit the Enter key with his tail:
+- mess_with_demographics(munsters)
+- Did the family's data get ransacked? Why or why not?
+
+
+munsters = {
+  "Herman" => { "age" => 32, "gender" => "male" },
+  "Lily" => { "age" => 30, "gender" => "female" },
+  "Grandpa" => { "age" => 402, "gender" => "male" },
+  "Eddie" => { "age" => 10, "gender" => "male" },
+  "Marilyn" => { "age" => 23, "gender" => "female"}
+}
+
+def mess_with_demographics(demo_hash)
+  demo_hash.values.each do |family_member|
+    family_member["age"] += 42
+    family_member["gender"] = "other"
+  end
+end
+
+puts mess_with_demographics(munsters)
+
+- Ruby passes the object id of each item rather than the value of the parameter. The method internally stores these object id's in locally scoped variables. It uses the 'munsters' hash as-is.
+
+- *** study this one, was challanging to understand the explanation
+
+***********************************************************************************************************************************************************************************************
+
+Question 8: Method calls can take expressions as arguments. Suppose we define a method called rps as follows, which follows the classic rules of rock-paper-scissors game, but with a slight twist that it declares whatever hand was used in the tie as the result of that tie.
+
+def rps(fist1, fist2)
+  if fist1 == "rock"
+    (fist2 == "paper") ? "paper" : "rock"
+  elsif fist1 == "paper"
+    (fist2 == "scissors") ? "scissors" : "paper"
+  else
+    (fist2 == "rock") ? "rock" : "scissors"
+  end
+end
+
+- What is the result of the following call?
+
+puts rps(rps(rps("rock", "paper"), rps("rock", "scissors")), "rock")
+
+- paper
+
+************************************************************************************************************************************************************************************************
+
+Question 9: Consider these two simple methods:
+
+def foo(param = "no")
+  "yes"
+end
+
+def bar(param = "no")
+  param == "no" ? "yes" : "no"
+end
+
+- What would be the return value of the following method invocation?
+
+puts bar(foo)
+
+- "no"
+- The return value of the foo method is 'yes' but when it is passed into the bar method, 'param' (which is now 'yes') is being compared to no - 'yes' == 'no' and that is false. So "no" is outputted.
