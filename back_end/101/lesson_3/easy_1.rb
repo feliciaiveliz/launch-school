@@ -1,5 +1,4 @@
-# Question 1
-# What would you expect the code below to print out?
+# Question 1: What would you expect the code below to print out?
 
 numbers = [1, 2, 2, 3]
 numbers.uniq
@@ -16,10 +15,9 @@ puts numbers
 # Array#uniq returns a new array with the duplicate elements removed. In this problem, the #uniq method doesn't end with a !, therefore it is non-destructive. 
 # Kernel#puts prints out the string value of each element on its own line, as opposed to printing it in its array form.
 
-##############################################################################################################################################################
+########################################################################################################################################################################
 
-# Question 2
-# Describe the difference between ! and ? in Ruby. And explain what would happen in the following scenarios:
+# Question 2: Describe the difference between ! and ? in Ruby. And explain what would happen in the following scenarios:
 
 1. what is != and where should you use it?
 2. put ! before somethng, like !user_name
@@ -36,10 +34,9 @@ puts numbers
 # * ! turns any object into opposite of their boolean value. - !true == false
 # * !! turns any object into boolean value - !!true == true
 
-###################################################################################################################################
+########################################################################################################################################################################
 
-# Question 3
-# Replace the word "important" with "urgent" in this string:
+# Question 3: Replace the word "important" with "urgent" in this string:
 
 advice = "Few things in life are as important as house training your pet dinosaur."
 
@@ -53,8 +50,7 @@ use .sub! to replace first occurrence of given string.
 
 #########################################################################################################################################################################
 
-# Question 4
-# The Ruby Array class has several methods for removing items from the array. Two of them have very similar names. Let's see how they differ:
+# Question 4: The Ruby Array class has several methods for removing items from the array. Two of them have very similar names. Let's see how they differ:
 
 numbers = [1, 2, 3, 4, 5]
 
@@ -66,21 +62,17 @@ numbers.delete(1)
 # delete is a method that deletes all the values that match the specified argument, in this case 1, and returns it. numbers = [2, 3, 4, 5]
 #Both arrays are operated on directly and are modified in-place.
 
-######################################################################################################################################################################
+#########################################################################################################################################################################
 
-# Question 5
-
-# Programmatically determine if 42 lies between 10 and 100.
+# Question 5: Programmatically determine if 42 lies between 10 and 100.
 
 1. (10..100).cover?(42) => true
 # Range#cover?(obj) => true or false
 # This method returns true if obj is between the beginning and end of the range
 
-###############################################################################
+#########################################################################################################################################################################
 
-# Question 6
-
-# Starting with the string: , show two different ways to put the expected "Four score and" in front of it.
+# Question 6: Starting with the string: , show two different ways to put the expected "Four score and" in front of it.
 
 famous_words = "seven years ago..."
 
@@ -93,7 +85,7 @@ famous_words.prepend("Four score and ")
 
 "Four score and " << famous_words
 
-####################################################################################################################################################################
+#########################################################################################################################################################################
 
 # Question 7
 
@@ -110,10 +102,9 @@ p how_deep
   
 p eval(how_deep) => 42  #**don't understand, come back to it
 
-################################################################################################################
+#########################################################################################################################################################################
 
-# Question 8
-#If we build an array like this:
+# Question 8: If we build an array like this:
 
 flintstones = ["Fred", "Wilma"]
 flintstones << ["Barney", "Betty"]
@@ -125,11 +116,9 @@ flintstones << ["BamBam", "Pebbles"]
 
 flintstones.flatten!
 
-#################################################################################################################
+#########################################################################################################################################################################
 
-# Question 9
-
-# Given the hash below:
+# Question 9: Given the hash below:
 
 flintstones = { "Fred" => 0, "Wilma" => 1, "Barney" => 2, "Betty" => 3, "BamBam" => 4, "Pebbles" => 5 }
 
