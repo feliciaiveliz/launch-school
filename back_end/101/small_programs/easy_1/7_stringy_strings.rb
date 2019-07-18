@@ -6,7 +6,7 @@ Inputs:
 - positive integer
 
 Output:
-- returns a string of alternating 1s and 0s
+- return a string of alternating 1s and 0s
 - string always starts with 1
 - length of string should match given integer
 
@@ -29,7 +29,7 @@ Data Structure:
 Algorithm: 
 - create method called stringy
   - takes one argument - integer
-- create empty array called binary_nums = []
+- create empty array called - binary_nums = []
 - use integer.times method to iterate over number
 - assign return value of the block parameter |number|: even or odd, to numbers variable
   - numbers = number.even? ? 1 : 0 

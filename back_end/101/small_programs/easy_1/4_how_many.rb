@@ -18,7 +18,7 @@ Output:
 - ex. car => 4
 
 Mental Model: 
-- The problem consists of an array of one or more random strings. Count the number of each occurence for that element and print out of list of the elements and their numbers
+- The problem consists of an array of given strings. Count the number of each occurence for that element and print out of list of the elements and their number of occurences
 
 Examples:
 - car => 4
@@ -28,13 +28,16 @@ Examples:
 
 Data Structure: 
 - Array#count method
-- variables named after each element that occurs at least once
+
 
 Algorithm: 
-- create method called count_occurrences that takes one argument- vehicles
-- initialize variables car, truck, motorcycle, and SUV
-- call count method on vehicles array for each element, and save the return value of that method to the appropriate variable
-- print each variable using puts "car => #{car}" 
+- create method called count_occurrences that takes one parameter - array
+- call #uniq on array to return an array with 1 occurence of each element
+  - array.uniq => vehicles = ['car', 'truck', 'SUV', 'motorcycle']
+- call #each on array to iterate and for each item - |item|
+  - puts "#{item} => #{array.count(item)}"
+- end array.uniq.each method
+- end count_occurrences method
 =end
 
 vehicles = [
@@ -46,11 +49,11 @@ vehicles = [
 
 # end
 
-# def count_occurrences(array)
-#   array.uniq.each do |item|
-#     puts "#{item} => #{array.count(item)}"
-#   end
-# end
+def count_occurrences(array)
+  array.uniq.each do |item|   
+    puts "#{item} => #{array.count(item)}"
+  end
+end
 
 def count_occurrences(arr)
   occur = Hash.new

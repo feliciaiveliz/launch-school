@@ -30,7 +30,7 @@ Data Structure:
 
 Algorithm: 
 - create method called reverse_words
-- split string into array of words or words
+- split string into array of words or word
   - save array of words into variable called words_array
   - 'launch school'.split => words_array = ['launch', 'school']
 - create variable called words_size and assign it to the words_array array
@@ -55,23 +55,19 @@ Algorithm:
 
 def reverse_words(words)
   words_array = words.split
-  words_size = words_array.length
-    
-  until words_size.zero?
+  # words_size = words_array.length
+  # until words_size.zero?
     words_array.each do |word|
       if word.length >= 5
         word.reverse!
       else
         word
       end
-    words_size -= 1
     end
-  end
-    
     words_array.join(' ')
 end
     
 puts reverse_words('Professional')
 puts reverse_words('Walk around the block')
 puts reverse_words('Launch School')
-  
+   # words_size -= 1
