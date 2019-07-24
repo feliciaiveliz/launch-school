@@ -89,13 +89,11 @@ hsh['fruit'][0]  # => 'a'
 
 It is important to note that the `[0]` part of `hsh['fruit'][0]` in the example is **string element reference**. The string `'apple'` is returned by `hsh['fruit']` and `[0]` is called on that return value. 
 
-When initializing a hash, the keys must be **unique**. 
-
-```
-hsh = { 'fruit' => 'apple', 'vegetable' => 'carrot', 'fruit' => 'pear' }
-```
+When initializing a hash, the keys must be **unique**:
 
 ```ruby
+hsh = { 'fruit' => 'apple', 'vegetable' => 'carrot', 'fruit' => 'pear' }
+
 (irb):7: warning: key "fruit" is duplicated and overwritten on line 7
 => {"fruit"=>"pear", "vegetable"=>"carrot"}
 ```
@@ -107,7 +105,7 @@ Values **can** be overwritten:
 ```ruby
 hsh = { 'apple' => 'fruit', 'carrot' => 'vegetable', 'pear' => 'fruit' }
 ```
-We can access just the keys or just the values from a hash with the `#keys` and `#values` methods of `Hash`. These methods return an array. 
+We can access just the keys or just the values from a hash with the `#keys` and `#values` methods of `Hash`. These methods return an array:
 
 ```ruby
 country_capitals = { uk: 'London', france: 'Paris', germany: 'Berlin' }
@@ -120,7 +118,7 @@ country_capitals.values[0] # => "London"
 
  - The example uses symbols as keys. Keys and values can both be of any object, however it is common practice to use symbols as keys.     Symbols in ruby can be thought of as immutable strings. 
 
-### Element Reference Gotchas
+## Element Reference Gotchas
 There are a few things to be aware of when you are referencing elements in a collection. Be aware of these to avoid unintended behavior in your code. 
 
 #### Out of Bounds Indices
@@ -162,9 +160,7 @@ arr.fetch(3)  # => IndexError: index 3 outside of array bounds: -3...3
               #        from /usr/bin/irb:11:in `<main>'
 ```
 
-`#fetch` throws an IndexError exception if the index is **out of bounds**. Which is better to use? `#[] or #fetch`? `#[]` occurs most in ruby, but it's better to use `#fetch` since it enforces the array boundaries. 
-
-Be careful when `#[]` returns `nil`. Think about whether `nil` is the real element in the array or if it's ruby's way of telling us we've gone beyond the array boundary. 
+`#fetch` throws an IndexError exception if the index is **out of bounds**. Which is better to use? `#[] or #fetch`? `#[]` occurs most in ruby, but it's better to use `#fetch` since it enforces the array boundaries. Be careful when `#[]` returns `nil`. Think about whether `nil` is the real element in the array or if it's ruby's way of telling us we've gone beyond the array boundary. 
 
 #### Negative Indices
 
@@ -186,7 +182,7 @@ Elements in `String` and `Array` objects can be referenced using negative indice
 
 What will be returned by the following calls? 
 
-```
+```ruby
 str = 'ghijk'
 arr = ['g', 'h', 'i', 'j', 'k']
 
@@ -203,7 +199,7 @@ arr.fetch(-6) # =>  # => IndexError: index -6 outside of array bounds: -5...5
 ```
 
 #### Invalid Hash Keys
-`Hash` also has a #fetch method which can be useful when trying to figure out valid hash keys with a `nil` value from invalid hash keys. 
+`Hash` also has a #fetch method which can be useful when trying to figure out valid hash keys with a `nil` value from invalid hash keys:
 
 ```ruby
 hsh = { :a => 1, 'b' => 'two', :c => nil }
