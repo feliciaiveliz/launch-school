@@ -115,6 +115,7 @@ We want to select the key-value pairs where the value is `'Fruit'`.
 
 *******************************************************
 ```ruby
+
 produce = { 
   'apple' => 'Fruit',
   'carrot' => 'Vegetable',
