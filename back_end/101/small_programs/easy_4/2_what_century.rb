@@ -15,10 +15,6 @@ Rules:
   - st, nd, rd, or th
 - new centuries begin in years that end with 01
 - 1901-2000 is the 20th century
-Requirements: 
-- 0, 4, 5, 6, 7, 8, 9, 10 - 
-- years that end in 1 - st
-- years that end in 2
 Examples: 
 - century(2000) == '20th'
 - century(2001) == '21st'
@@ -34,5 +30,50 @@ Examples:
 - 201 - 300 is 3rd
 - 301 - 400 is 4th
 Algorithm:
-- create century method that takes one parameter 'year'
-- if year.end_with?()
+- create century method that takes one parameter - year
+- assign the year to 'century' variable
+  - divide the year by 100 and add 1 to it
+  - if the year % 100 == 0, then subtract by 1 and assign it back to century
+- convert century to string- suffix will be appended to it
+- create method 'century_suffix' that takes param- century
+- return 'th' if 11, 12 or 13 is included in- cnetury % 100
+- start case statement
+  - last_digit = century % 10
+  - case last_digit
+  - when 1 then 'st'
+  - when 2 then 'nd'
+  - when 3 then 'rd'
+  else 'th'
+  - end case
+- end method
+=end
+
+def century(year)
+  century = year / 100 + 1
+  century -= 1 if year % 100 == 0
+  century.to_s + century_suffix(century)
+end
+
+def century_suffix(century)
+  return 'th' if [11, 12, 13].include?(century % 100)
+  last_digit = century % 10
+
+  case last_digit
+  when 1 then 'st'
+  when 2 then 'nd'
+  when 3 then 'rd'
+  else 'th'
+  end
+end
+
+p century(2000)
+p century(2001)
+p century(1965)
+p century(256)
+p century(5)
+p century(10103)
+p century(1052)
+p century(1127)
+p century(11201)
+
+## STUDY THIS ONE
