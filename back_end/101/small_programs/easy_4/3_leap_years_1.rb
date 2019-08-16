@@ -12,11 +12,10 @@ false if it is not a leap year.
 Input: integer
 Output: boolean
 Rules: 
-- integer is a year > than year 0
+- integer is a year > than 0
 - leap years occur every year that is evenly divisible by 4
-- unless year is also divisible by 100
-- if the year is divisible by 100, it is only a leap year if
-  - year is evenly divisible by 400
+- not leap year if also divisible by 100
+- if the year is divisible by 100, it is leap year if year divisible by 400
 Examples: 
 leap_year?(2016) == true
 leap_year?(2015) == false
@@ -32,7 +31,7 @@ leap_year?(1) == false
 leap_year?(100) == false
 leap_year?(400) == true
 Data Structure: 
-- integer, modulo
+- integer, modulo, if/elsif/else statement
 Algorithm: 
 - create leap_year? method that takes one argument 'year'
 - if year % 4 == 0 && year % 100 != 0
@@ -45,41 +44,41 @@ Algorithm:
 - end method
 =end
 
-# def leap_year?(year)
-#   if year % 400 == 0
-#     true
-#   elsif year % 100 == 0
-#     false
-#   else 
-#     year % 4 == 0
-#   end
-# end
+def leap_year?(year)
+  if year % 400 == 0
+    true
+  elsif year % 100 == 0
+    false
+  else 
+    year % 4 == 0
+  end
+end
 
-# # or
+or
 
-# def leap_year?(year)
-#   if year % 4 == 0 && year % 100 != 0
-#     true
-#   elsif year % 400 == 0
-#     true
-#   else
-#     false
-#   end
-# end
+def leap_year?(year)
+  if year % 4 == 0 && year % 100 != 0
+    true
+  elsif year % 400 == 0
+    true
+  else
+    false
+  end
+end
 
-# p leap_year?(2016) 
-# p leap_year?(2015) 
-# p leap_year?(2100)
-# p leap_year?(2400) 
-# p leap_year?(240000)
-# p leap_year?(240001)
-# p leap_year?(2000) 
-# p leap_year?(1900)
-# p leap_year?(1752) 
-# p leap_year?(1700) 
-# p leap_year?(1)
-# p leap_year?(100) 
-# p leap_year?(400) 
+p leap_year?(2016) 
+p leap_year?(2015) 
+p leap_year?(2100)
+p leap_year?(2400) 
+p leap_year?(240000)
+p leap_year?(240001)
+p leap_year?(2000) 
+p leap_year?(1900)
+p leap_year?(1752) 
+p leap_year?(1700) 
+p leap_year?(1)
+p leap_year?(100) 
+p leap_year?(400) 
 
 
 # Further Exploration
@@ -90,6 +89,16 @@ def leap_year?(year)
     true
   else
     year % 4 == 0
+  end
+end
+
+def leap_year?(year)
+  if year % 4 == 0 && year % 100 != 0
+    true
+  elsif year % 400 == 0
+    true
+  else
+    false
   end
 end
 
@@ -106,5 +115,3 @@ leap_year?(1700) == false    # false
 leap_year?(1) == false       # false
 leap_year?(100) == false     # false
 leap_year?(400) == true      # false ** Same as above
-
-
