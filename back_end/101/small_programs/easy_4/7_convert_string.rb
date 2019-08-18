@@ -31,7 +31,7 @@ DIGITS = {
 }
 
 def string_to_integer(string)
-  digits = string.chars.map do |char| '4321'
+  digits = string.chars.map do |char| # '4321'
     DIGITS[char]  # ['4', '3', '2', '1']
   end 
   digits  # => [4, 3, 2, 1]
