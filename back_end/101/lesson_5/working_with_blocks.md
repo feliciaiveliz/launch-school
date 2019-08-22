@@ -158,11 +158,11 @@ end
  ### Example 6 Tabular Breakdown: 
  **Line** |      Action            |    Object              | Side Effect |     Return Value     |     Is Return Value Used?         |
 ----------|------------------------|------------------------|-------------|----------------------|-----------------------------------|
-   152    | method call (`select`) | nested array           |   None      |  array [{ c: 'cat' }]     |              No                   |
- 152-156  | outer block execution  | each hash within array |   None      |  array [{ c: 'cat' }]     | Yes used by select for selection to determine r.v |
+   152    | method call (`select`) | nested array           |   None      |  array `[{ c: 'cat' }]` |              No                   |
+ 152-156  | outer block execution  | each hash within array |   None      |  array `[{ c: 'cat' }]` | Yes used by select for selection to determine r.v |
   153     | method call (`all?`)   | each hash within array |   None      |   boolean value      | Yes used to determine outer block r.v |
-153-155   | inner block execution | each key,value pair in hash |   None  |   key, value pair    |  Yes, used by inner all? to determine r.v of all? |
-  154     | value[0] == key.to_s  | each key, value pair in each hash |   None  | boolean value  | Yes, used to determine r.v of inner block |
+153-155   | inner block execution  | each key,value pair in hash |   None  |   key, value pair    |  Yes, used by inner all? to determine r.v of all? |
+  154     | `value[0] == key.to_s` | each key, value pair in each hash |   None  | boolean value  | Yes, used to determine r.v of inner block |
 
 
 
