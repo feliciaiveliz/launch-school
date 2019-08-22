@@ -60,6 +60,9 @@ end
   puts arr.first
   arr.first
 end
+# 1
+# 3
+# => [nil, nil]
 ```
 
 #### Example 3 Tabular Breakdown:
@@ -89,7 +92,11 @@ my_arr = [[18, 7], [3, 12]].each do |arr|
       puts num
     end
    end
-  end
+ end
+ # 18
+ # 7
+ # 12
+ # => [[18, 7], [3, 12]]
 ```
 #### Example 4 Tabular Breakdown - My Attempt: 
 **Line** |      Action        |    Object     | Side Effect |     Return Value     |     Is Return Value Used?         |
@@ -115,8 +122,30 @@ my_arr = [[18, 7], [3, 12]].each do |arr|
  26-28   | conditional (`if`)    | element of subarray in that iteration | None       |  nil     | yes, used to determine r.v of inner block |
   27     | method call (`puts`)  | element of subarray in that iteration | outputs string rep. of Integer | nil            | yes, used to determine r.v of inner block         |
   
-
-
+### Example 5: 
+```ruby
+[[1, 2], [3, 4]].map do |arr|
+  arr.map do |num|
+    num * 2
+  end
+ end
+ # => [[2, 4], [6, 8]]
+ 
+ ```
+ 
+ ### Example 5 Tabular Breakdown - My Solution: 
+ 
+ **Line** |      Action           |    Object     | Side Effect |     Return Value     |     Is Return Value Used?         |
+---------|-----------------------|---------------|-------------|----------------------|-----------------------------------|
+         | method call (`each`)  | [[18, 7], [3, 12]]   |   None      | [[18, 7], [3, 12]]   | Yes, saved to my_arr local variable   |
+   24    | assignment            | my_arr        |   None      | [[18, 7], [3, 12]]   | No, but shown on line 33 |
+ 24-30   | outer block execution | each subarray |   None | each subarray       |              no              |
+ 25-29   | inner block execution | element of subarray in that iteration |   None   | nil     |              no              |
+   25    | method call `each`    | each subarray |   None      | each subarray in current iteration(calling object)  |yes, used to determine r.v of outer block |
+   26    | comparison (`>`)      | element of subarray in that iteration | None       | boolean  | yes, evaluated by `if`       | 
+ 26-28   | conditional (`if`)    | element of subarray in that iteration | None       |  nil     | yes, used to determine r.v of inner block |
+  27     | method call (`puts`)  | element of subarray in that iteration | outputs string rep. of Integer | nil            | yes, used to determine r.v of inner block         |
+  
 
 
 
