@@ -137,8 +137,32 @@ my_arr = [[18, 7], [3, 12]].each do |arr|
  122-124 | inner block execution | each element in subarray |   None      | 2, 4, 6, 8       |         Yes, used by inner map    |
   123    | transformation of integer | each integer in each subarray |   None      | 2, 4, 6, 8 |yes, used to determine r.v of inner block |
  
+ ### LS Solution: 
+  **Line**|      Action           |    Object            | Side Effect |     Return Value     |     Is Return Value Used?         |
+---------|-----------------------|----------------------|-------------|----------------------|-----------------------------------|
+  121    | method call (`map`)   | [[1, 2], [3, 4]]     |   None      | [[2, 4], [6, 8]]     |               No                  |
+ 121-125 | outer block execution | each subarray        |   None      | [[2, 4], [6, 8]]     |         Yes, used by map for transformation          |
+  122    | method call (`map`)   | each subarray        |   None      | [[2, 4], [6, 8]]     |          Yes used to determine outer blocks r.v |
+ 122-124 | inner block execution | each element in subarray |   None      | 2, 4, 6, 8- each integer       |         Yes, used by inner map for transformation    |
+  123    |      `num * 2`        | each integer in each subarray |   None      | 2, 4, 6, 8- each integer |yes, used to determine r.v of inner block |
 
+### Example 6
 
+```ruby
+[{ a: 'ant', b: 'elephant' }, { c: 'cat' }].select do |hash|
+  hash.all? do |key, value|
+    value[0] == key.to_s
+  end
+end
+```
+ ### Example 6 Tabular Breakdown: 
+ **Line** |      Action            |    Object              | Side Effect |     Return Value     |     Is Return Value Used?         |
+----------|------------------------|------------------------|-------------|----------------------|-----------------------------------|
+   152    | method call (`select`) | nested array           |   None      |  array [{ c: 'cat' }]     |              No                   |
+ 152-156  | outer block execution  | each hash within array |   None      |  array [{ c: 'cat' }]     | Yes used by select for selection to determine r.v |
+  153     | method call (`all?`)   | each hash within array |   None      |   boolean value      | Yes used to determine outer block r.v |
+153-155   | inner block execution | each key,value pair in hash |   None  |   key, value pair    |  Yes, used by inner all? to determine r.v of all? |
+  154     | value[0] == key.to_s  | each key, value pair in each hash |   None  | boolean value  | Yes, used to determine r.v of inner block |
 
 
 
