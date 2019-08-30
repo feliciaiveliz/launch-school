@@ -62,6 +62,21 @@ def word_sizes(string)
   words_hash
 end
 
+
+def word_sizes(string)
+  words_hash = {}
+  
+  string.split.each do |word|
+    size = word.size
+    if words_hash.has_key?(size)
+      worsds_hash[size] += 1
+    else
+      words_hash[size] = 1
+    end
+  end
+  words_hash
+end
+
 p word_sizes('Four score and seven.') 
 p word_sizes('Hey diddle diddle, the cat and the fiddle!') 
 p word_sizes("What's up doc?")
