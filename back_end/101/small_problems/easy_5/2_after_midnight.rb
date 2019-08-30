@@ -9,33 +9,6 @@ rules:
 - if number positive, time is AFTER midnight
 - if negative, time is BEFORE midnight
 - input will be in minutes format
- 
-0 - 00:00 midnight- POSITIVE
-1 - 01:00
-2 - 02:00 3000 minutes / 60 minutes / 24 hours
-3 - 03:00
-4 - 04:00
-5 - 05:00
-6 - 06:00
-7 - 07:00
-8 - 08:00
-9 - 09:00
-10 - 10:00
-11 - 11:00
-
-12 - 12:00 p.m- NEGATIVE
-1 - 13:00 
-2 - 14:00
-3 - 15:00
-4 - 16:00
-5 - 17:00
-6 - 18:00
-7 - 19:00
-8 - 20:00
-9 - 21:00
-10 - 22:00
-11 - 23:00
-
 algorithm: 
 - define 3 constants: MINUTES_PER_HOUR = 60, HOURS_PER_DAY = 24, MINUTES_PER_DAY = HOURS_PER_DAY * MINUTES_PER_HOUR
 - def time_of_day(delta_minutes)
@@ -56,8 +29,8 @@ def time_of_day(delta_minutes)
 end
 
 def time_of_day(time)
-  time = time % 1440 
-  hours, minutes = time.divmod(60)
+  time = time % 1440               # 60 minutes * 24 hrs per day
+  hours, minutes = time.divmod(60) # 
   format('%02d:%02d', hours, minutes)
 end
 
