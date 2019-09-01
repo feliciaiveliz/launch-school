@@ -52,3 +52,37 @@ def word_sizes(string)
   words_hash
 end
 ```
+
+* September 1, 2019*
+* Updating for yesterday*
+
+Easy 6- 1. Cute Angles
+
+My Attempt at Solution:
+```ruby
+# DEGREE = "\xC2\xB0"
+def dms(number)
+degree = number.divmod(1).first      
+minutes = number.divmod(1).last * 60
+seconds = minutes.divmod(1).last * 60
+"#{format('xC2xB0', degree)}#{format('%02d', minutes)}#{"'"}#{format('%02d', seconds)}"
+end
+```
+
+LS Solution: 
+
+```ruby
+DEGREE = "\xC2\xB0"
+MINUTES_PER_DEGREE = 60
+SECONDS_PER_MINUTE = 60
+SECONDS_PER_DEGREE = MINUTES_PER_DEGREE * SECONDS_PER_MINUTE
+
+def dms(degrees_float)
+  total_seconds = (degrees_float * SECONDS_PER_DEGREE).round
+  degrees, remaining_seconds = total_seconds.divmod(SECONDS_PER_DEGREE)
+  minutes, seconds = remaining_seconds.divmod(SECONDS_PER_MINUTE)
+  format(%(#{degrees}#{DEGREE}%02d'%02d"), minutes, seconds)
+end
+```
+
+Yesterday I learned how `divmod` is used. I've seen it before but never really understood how it worked, even with reading Ruby Docs and seeing examples. At first I couldn't understand the problem, so I had to research the 'math' needed to figure out degrees, minutes, and seconds. I'm sure my solution isn't the most elegant, but it works and is more readable and understandable for me at the moment. The only part that doesn't work for me is the formatting. I need to learn how it works. FOr whatever reason, in my terminal, it won't format properly. All the numbers are correct, but instead of showing the degree symbol, it shows a bunch of slash marks and letters.  
