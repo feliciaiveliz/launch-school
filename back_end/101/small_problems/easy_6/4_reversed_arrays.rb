@@ -9,29 +9,44 @@ rules:
 - cannot use reverse or reverse!
 - reverse elements in place
 - first element will be assigned to last element
+- second element will be assigned to second to last element, etc.
+- if there is only one element, that array will be returned as is
 data structure: array
 algorithm: 
 - create list(array) method
-- assign counter to 0, this will be used to increment index in array
-- assign first element to last
-- assign next element to second to last element
-- return array
+- initialize index to 0
+- enter a loop that will iterate over array
+- if counter is equal to the size of the array, (4 == 4), break
+- insert result of popping off last element of array in the 'index' index position
+  - array.insert(index, array.pop) => array.insert(0, 4) 4 will now be in 0 index position
+- increment index by 1 to move on to second element in array
+- return original array
 - end method
-=end 
+=end
 
+# def reverse!(array)
+#   index = 0
+#   loop do 
+#     break if index == array.size # counter cannot be greater than array size
+#     array.insert(index, array.pop)
+#     index += 1
+#   end 
+#   array
+# end
 
-def reverse!(list)
-  index = 0
-  last_index = -1
+def reverse!(array)
+  left_index = 0
+  right_index = -1
 
   loop do 
-    list[0], list[-1] = list[-1], list[0]
-    index += 1
-    last_index -= 1
-    break if index > list.size / 2
+    break if left_index == array.size / 2
+    array[left_index], array[right_index] = array[right_index], array[left_index]
+    left_index += 1
+    right_index -= 1
   end
-  list
+  array
 end
+
 
 p list = [1, 2, 3, 4]
 p result = reverse!(list)
@@ -50,16 +65,6 @@ p list == ["abc"]
 p list = []
 p reverse!(list) == []
 p list == []
-
-# def reverse!(arr)
-#   counter = 0
-#   loop do
-#     break if counter == arr.size
-#     arr.insert(counter, arr.pop)
-#     counter += 1
-#   end
-#   arr
-# end
 
 
 
