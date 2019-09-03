@@ -17,6 +17,13 @@ def triangle(num)
   num.times {|n| puts (("*" * n) + "*").rjust(num) }
 end
 
+# Further Exploration
+
+def triangle(num)
+  num.downto(0) {|n| puts (("*" * n)).rjust(num) }
+end
+
+
 p triangle(5)
 p triangle(9)
 
