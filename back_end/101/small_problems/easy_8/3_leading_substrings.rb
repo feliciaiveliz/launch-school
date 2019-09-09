@@ -36,6 +36,15 @@ def substrings_at_start(string)
   array
 end
 
+def substrings(string)
+  array = []
+
+  string.size.times do |i|    # times goes from 0 to i times, in this case 5
+    array << string[0..i]     # counter not needed
+  end
+  array
+end
+
 p substrings_at_start('abc') 
 p substrings_at_start('a')
 p substrings_at_start('xyzzy')
