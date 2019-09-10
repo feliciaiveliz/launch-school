@@ -32,6 +32,10 @@ algorithm:
 #   "#{format('xC2xB0', degree)}#{format('%02d', minutes)}#{"'"}#{format('%02d', seconds)}"
 # end
 
+# Another way that I thought could work by researching:
+# "#{degree}#{degrees}#{format("%02d'%02d", minutes, seconds)}"
+# "#{degree}#{DEGREE}#{format("%02d'%02d", minutes, seconds)}"
+
 DEGREE = "\xC2\xB0"
 
 def dms(number)
