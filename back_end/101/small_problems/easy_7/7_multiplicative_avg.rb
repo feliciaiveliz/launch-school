@@ -33,6 +33,12 @@ def show_multiplicative_average(array)
   "The result is #{avg}"
 end
 
+# Or
+def show_avg(array)
+  avg = array.inject(:*) / array.size.to_f
+  "The result is #{format('%.3f', avg)}"
+end
+
 p show_multiplicative_average([3, 5])
 
 p show_multiplicative_average([6])
