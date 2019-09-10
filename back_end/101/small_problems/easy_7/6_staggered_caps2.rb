@@ -15,41 +15,29 @@ staggered_case('ignore 77 the 444 numbers') == 'IgNoRe 77 ThE 444 nUmBeRs'
 data structure: array, string
 algorithm: 
 - define staggered_case(string) method
-- initialize to empty variable 'caps' and empty array- caps = []
-- split string into array of individual characters- string.chars
-- iterate over array and delete all spaces so only letters are left 
-- string.chars.map {|char|}
-  - char.gsub!(/[^a-z]/i, '')
-- end map method
-  def staggered_case(string)
-  caps = []
-  string.chars.each_with_index do |char, index|
-    if index.even?
-      caps << char.upcase
-    elsif index.odd?
-      caps << char.downcase
-    else
-      char
-    end
-  end
-  caps.join
-end
+- assign true to 'need_upper' variable
+- assign to 'result' splitting the string into an array of chars and iterate over each
+- if need_upper (is true)
+- upcase! the char
+- else if need_upper (is false)
+- downcase! the char
+- assign false to need_upper if char =~ /[a-z]/i
+- this allows chars to alternate between cases in the if/else statement
+- if the current char isn't a letter, it will repeat the current case state
+- join the string
 =end
 
-def staggered_case(string)
-  string.delete('^a-zA-Z0-9')
-  
-  caps = []
-  string.chars.each_with_index do |char, index|
-    if index.even?
-      caps << char.upcase
-    elsif index.odd?
-      caps << char.downcase
+def staggered_case(string)  
+  need_upper = true
+  result = string.chars.each do |char|
+    if need_upper
+      char.upcase!
     else
-      char
+      char.downcase!
     end
+    need_upper = false if char =~ /[a-z]/i
   end
-  caps.join('')
+  string.join
 end
 
 staggered_case('I Love Launch School!') == 'I lOvE lAuNcH sChOoL!'
