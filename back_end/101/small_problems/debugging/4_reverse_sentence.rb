@@ -46,7 +46,7 @@ def reverse_sentence(sentence)
   reversed_words = []
 
   i = 0
-  while i < words.length
+  while i < words.length # words[i].+(reversed_words)
     reversed_words = [words[i]] + reversed_words  # turn words[i] into an array to add it to reversed_words
     i += 1
   end
@@ -56,3 +56,18 @@ end
 
 p reverse_sentence('how are you doing')
 # expected output: 'doing you are how'
+
+# or to make life easier
+
+def reverse_sentence(sentence)
+  words = sentence.split(' ')
+  reversed_words = []
+
+  i = 0
+  while i < words.length
+    reversed_words.unshift(words[i]) # this prepends the word at the beginning of the array
+    i += 1
+  end
+
+  reversed_words.join(' ')
+end
