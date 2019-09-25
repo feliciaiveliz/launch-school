@@ -86,3 +86,18 @@ end
 ```
 
 Yesterday I learned how `divmod` is used. I've seen it before but never really understood how it worked, even with reading Ruby Docs and seeing examples. At first I couldn't understand the problem, so I had to research the 'math' needed to figure out degrees, minutes, and seconds. I'm sure my solution isn't the most elegant, but it works and is more readable and understandable for me at the moment. The only part that doesn't work for me is the formatting. I need to learn how it works. FOr whatever reason, in my terminal, it won't format properly. All the numbers are correct, but instead of showing the degree symbol, it shows a bunch of slash marks and letters.  
+
+* September 25th, 2019 - Wednesday
+
+Easy 9 - Problem 8 - Sequence Count
+
+I learned that ranges have access to `Enumerable` methods such as map. It will be treated as an array and won't have to be converted. 
+
+Example: 
+
+```ruby
+(1..5).map { |num| num }
+=> [1, 2, 3, 4, 5]
+```
+
+Super cool! 
