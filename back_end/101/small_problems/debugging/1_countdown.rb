@@ -31,6 +31,22 @@ Output:
 LAUNCH!
 =end
 
+# LS Solution
+def decrease(counter)
+  counter - 1  # reassignment in previous solution wasn't necessary. 'counter' here in this method is local only to this method and is not the same as the 'counter = 10' beneath it
+end
+
+counter = 10
+
+10.times do 
+  puts counter
+  counter = decrease(counter) # reassignment takes place here
+end
+
+puts "Launch!"
+
+# My solution
+
 10.downto(1) do |counter|
   puts counter
 end
