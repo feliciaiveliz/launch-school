@@ -215,7 +215,7 @@ Metrics/AbcSize:
   Description: >-
                  A calculated magnitude based on number of assignments,
                  branches, and conditions.
-  Enabled: true
+  Enabled: false
   Max: 18
 
 Metrics/BlockLength:
@@ -228,7 +228,7 @@ Metrics/ClassLength:
 
 Metrics/LineLength:
   Description: Limit lines to 80 characters.
-  Enabled: true
+  Enabled: false
   Max: 80
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#80-character-limits
   AllowURI: true
@@ -238,7 +238,7 @@ Metrics/LineLength:
 
 Metrics/MethodLength:
   Description: 'Avoid methods longer than 15 lines of code.'
-  Enabled: true
+  Enabled: false
   CountComments: false  # count full line comments?
   Max: 15
 
