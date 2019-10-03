@@ -204,6 +204,9 @@ def sleep
   system 'sleep 3'
 end
 
+def display_goodbye_msg
+  prompt "Thanks for playing Tic Tac Toe! Farewell!"
+end
 ############# Main Loop ###############
 
 loop do
@@ -242,4 +245,4 @@ loop do
   break unless play_again?(player_play_again)
 end
 
-prompt "Thanks for playing Tic Tac Toe! Farewell!"
+display_goodbye_msg
