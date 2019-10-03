@@ -98,4 +98,4 @@ loop do
   break unless answer.downcase.start_with?('y')
 end
 
-prompt "Thanks for playing Tic Tac Toe! Farewell!"
+prompt "Thanks for playing Tic Tac Toe! Farewell!"  

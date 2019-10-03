@@ -14,6 +14,7 @@ end
 
 def display_board(brd)
   system 'clear'
+  prompt "Welcome to Tic Tac Toe! The first player to win 5 matches, wins the entire game!"
   puts "You're #{PLAYER_MARKER}. Computer is #{COMPUTER_MARKER}."
   puts ""
   puts "       |       |"
@@ -31,24 +32,24 @@ def display_board(brd)
 end
 
 def initialize_board
-  new_board = {}
+  new_board = {} # hash w/ keys as integers and values as spaces
   (1..9).each { |num| new_board[num] = INITIAL_MARKER }
   new_board
 end
 
 def empty_squares(brd)
-  brd.keys.select { |num| brd[num] == INITIAL_MARKER }
+  brd.keys.select { |num| brd[num] == INITIAL_MARKER } # this returns an array of integers
 end
 
-def player_places_piece!(brd)
-  square = ''
-  loop do
+def player_places_piece!(brd) # descructive method
+  square = '' # this makes it accessible after the loop ends
+  loop do # keeps asking for player to choose a square
     prompt "Choose a square (#{empty_squares(brd).join(', ')}):"
     square = gets.chomp.to_i
-    break if empty_squares(brd).include?(square)
+    break if empty_squares(brd).include?(square) # break when key has a value of space
     prompt "Sorry, that's not a valid choice."
   end
-  brd[square] = PLAYER_MARKER
+  brd[square] = PLAYER_MARKER # this modifies existing value to an X
 end
 
 def computer_place_piece!(brd)
@@ -84,9 +85,10 @@ def detect_winner(brd)
   nil
 end
 
+# Main Code 
 loop do
   board = initialize_board
-
+  
   loop do
     display_board(board)
     player_places_piece!(board)
