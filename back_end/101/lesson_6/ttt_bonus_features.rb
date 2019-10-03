@@ -207,7 +207,8 @@ end
 def display_goodbye_msg
   prompt "Thanks for playing Tic Tac Toe! Farewell!"
 end
-############# Main Loop ###############
+
+# Main Code
 
 loop do
   display_welcome_msg
