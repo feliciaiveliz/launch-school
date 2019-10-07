@@ -1,4 +1,3 @@
-FIRST_PLAYER = %w(p c)
 VALID_ANSWERS = %w(1 2)
 INITIAL_MARKER = ' '
 PLAYER_MARKER = 'X'
@@ -15,7 +14,7 @@ end
 def display_welcome_msg
   prompt "Welcome to Tic Tac Toe!"
   prompt "You must mark three squares in a single line to win the round."
-  prompt "The first player to win #{WIN_MATCH} rounds is GRAND CHAMPION!"
+  prompt "The first player to win #{WIN_MATCH} rounds is the GRAND CHAMPION!"
 end
 
 # rubocop:disable Metrics/MethodLength
@@ -127,8 +126,8 @@ def joinor(arr, delimiter=', ', word='or')
   end
 end
 
-def find_at_risk_square(line, board, _)
-  if board.values_at(*line).count(PLAYER_MARKER) == 2
+def find_at_risk_square(line, board, marker)
+  if board.values_at(*line).count(marker) == 2
     board.select { |k, v| line.include?(k) && v == INITIAL_MARKER }.keys.first
   else
     nil
@@ -215,7 +214,7 @@ def clear_screen
 end
 
 def sleep
-  system 'sleep 5'
+  system 'sleep 4'
 end
 
 def display_goodbye_msg
