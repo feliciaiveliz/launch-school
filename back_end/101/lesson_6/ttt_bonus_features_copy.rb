@@ -129,8 +129,6 @@ end
 def find_at_risk_square(line, board, marker)
   if board.values_at(*line).count(marker) == 2
     board.select { |k, v| line.include?(k) && v == INITIAL_MARKER }.keys.first
-  else
-    nil
   end
 end
 
@@ -243,6 +241,7 @@ loop do
       break if someone_won_round?(board) || board_full?(board)
     end
 
+    display_board(board)
     if someone_won_round?(board)
       update_scores!(board, scores)
       display_winner(board)
