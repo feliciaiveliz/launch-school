@@ -17,6 +17,7 @@ def display_welcome_msg
   prompt "The first player to win #{WIN_MATCH} rounds is the Champion!"
 end
 
+# rubocop:disable Metrics/AbcSize
 def display_board(brd)
   clear_screen
   puts "=> You're #{PLAYER_MARKER}. Computer is #{COMPUTER_MARKER}."
@@ -34,6 +35,7 @@ def display_board(brd)
   puts "       |       |"
   puts ""
 end
+# rubocop:enable Metrics/AbcSize
 
 def initialize_board
   new_board = {}
@@ -52,7 +54,8 @@ end
 def who_plays_first
   answer = ''
   loop do
-    prompt "Who plays first? Type 'p' for player, 'c' for computer, or 'ch' for choose'."
+    prompt "Who plays first?"
+    prompt "Type 'p' for player, 'c' for computer, or 'ch' for choose'."
     answer = gets.chomp.downcase
     break if VALID_ANSWERS.include?(answer)
     prompt "That's not a valid choice."
