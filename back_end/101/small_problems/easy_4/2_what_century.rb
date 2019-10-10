@@ -66,20 +66,18 @@ Algorithm:
 #   end
 # end
 
+def suffix_generator(century)
+  return "th" if century[-2] == "1"
+  return "st" if century[-1] == "1"
+  return "nd" if century[-1] == "2"
+  return "rd" if century[-1] == "3"
+  "th"
+end
+
 def century(year)
-  cent = year/100 + 1 unless year%100 == 0
-  cent = year/100 if year%100 == 0
-  last = cent.digits.first
-  case last
-  when 1
-    return "#{cent}st"
-  when 2
-    return "#{cent}nd"
-  when 3
-    return "#{cent}rd"
-  else
-    return "#{cent}th"
-  end
+  century = (year + 99) / 100
+  century = century.to_s
+  century + suffix_generator(century)
 end
 
 p century(2000)
