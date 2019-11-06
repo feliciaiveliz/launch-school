@@ -37,7 +37,7 @@ def word_lengths(string)
 
   lengths = []
   string.split.each do |word|
-    lengths << word + " " + word.size.to_s
+    lengths << word + " " + word.size.to_s 4 
   end
 
   lengths
