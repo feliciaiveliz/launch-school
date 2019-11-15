@@ -1,5 +1,7 @@
 ## Beginner Ruby Video Notes - Part 2
 
+### What is output here?
+
 ```ruby
 def amethod(param)
   str += " world"
@@ -10,7 +12,7 @@ amethod(str)
 
 p str
 ```
-This code generates an error because `str` is not available within the method.`str` doesn't exist in the method as it is initialized in the outer scope. Method definitions create their own scope. 
+- This code generates an error because `str` is not available within the method.`str` doesn't exist in the method as it is initialized in the outer scope. Method definitions create their own scope. 
 
 ***
 
@@ -43,7 +45,7 @@ amethod(str)
 p str
 ```
 
-This code will print "hello world". `<<` is a mutating method that appends the String object on the right of it to the String object to the left of it. `str` is modified in this case.
+- This code will print "hello world". `<<` is a mutating method that appends the String object on the right of it to the String object to the left of it. `str` is modified in this case.
 
 ***
 
@@ -87,7 +89,7 @@ amethod(str)
 p str
 ```
 
-This code will print out `hello world` because `line 3` has a permanent effect on `param`. Since the result of the new concatenated string was not saved ina a variable, it was discarded and therefore ignored.
+- This code will print out `hello world` because `line 3` has a permanent effect on `param`. Since the result of the new concatenated string was not saved ina a variable, it was discarded and therefore ignored.
 
 ***
 
