@@ -71,7 +71,7 @@ arr.each do |n|
 end
 ```
 
-- On `line 1` we initialize local variable `a` and set it reference Array object with integer objects `1-10`.
+- On `line 1` we initialize local variable `a` and set it reference Array object with integer `1-10`.
 - On `lines 3-5` we invoke the `#each` method on the array object local variable `arr` is referencing, passing in the `do...end` block as an argument to the method.
 - `#each` iterates through an array and executes the code within the block for each element.
 - On `line 3-5`, the `do...end` alongside the `#each` method invocation defines a block and an inner scope. 
