@@ -82,7 +82,7 @@ loop do
 end
 ```
 
-- On `line 1` we initialize local variable `counter` and set it to reference an Integer with a value of `0`. This variable keeps track of the number of iterations performed by the `loop` method.
+- On `line 1` we initialize local variable `counter` and set it to reference an Integer with a value of `0`. This variable keeps track of the number of iterations performed by the `loop` method invocation.
 - On `lines 3-7` the `do..end` following the `loop` method invocation defines a block and an inner scope, within which on `line 4` we invoke the `puts` method and pass in a String object with a value of `Hello!` on each iteration.
 - On `line 5` we increment the integer value reference by `counter` by `1`. 
 - On `line 6` we use keyword `break` and a conditional `if` statement to check on each iteration `counter` is equal to `5`. If so, then we exit the loop, otherwise the loop repeats. 
@@ -150,7 +150,7 @@ end
 - From `lines 3-7` the `do..end` following the `loop` method invocation defines a block and an inner scope.
 - Within this inner scope, on `line 5`, we use keyword `break` and a conditional `if` statement to exit the `loop` if the counter variable is equal to the length of the `alphabet` string. `String#size` returns the number of characters in a given string.
 - On `line 6` we invoke the `puts` method and use string reference to retrieve each letter based on its index for each iteration.
-- We increment the value reference by the `counter` variable on `line 7`.
+- We increment the value reference by the `counter` variable on `line 7` by `1`.
 
 ***
 
