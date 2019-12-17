@@ -25,7 +25,7 @@ p str
 
 ```ruby
 def amethod(param)
-  param << " world"
+  param += " world"
 end
 
 str = "hello"
@@ -128,7 +128,7 @@ b = a
 - Variables point to objects. 
 - Objects are things that live in memory.
 - This is two variable initializations. 
-- `a` is being intialized to String object with value `hello`.
+- `a` is being initialized to String object with value `hello`.
 - `b` is being initialized to same String object that local variable `a` is pointing to. 
 
 ***
@@ -180,15 +180,15 @@ puts b
 - There are now two variables and two objects
 - `line 9` is reassignment; local variable `a` is now referencing a new String object `hey`.
 - On `line 10` we invoke destructive method call `<<` on String object local variable `b` is referencing, appending String object `universe` to it.
-- local variable `a` is referencing a whole new string while local variable `b` is still referencing `hello world` string object.
+- local variable `a` is referencing a whole new string object while local variable `b` is still referencing the `hello world` string object.
 
 ***
 
 #### Describe what is happening in the code below: 
 
 ```ruby
-def amethod(param) # param = str
-  param += " universe" # param = param + " universe"
+def amethod(param)       # param = str
+  param += " universe"   # param = param + " universe"
   param << " world"
 end
 
@@ -198,11 +198,11 @@ amethod(str)
 p str
 ```
 
-- We have method definition called `amethod` that takes one paramter, `param`.
+- We define method definition called `amethod` that takes one parameter, `param`.
 - On `line 1` we initialize `amethod` local variable `param`.
 - On `line 8` we pass local variable `str` into `amethod` method as argument.
-- On `line 1` `param` is assigned to `str`.
-- On `line 2` we reassign `param` to a new String object. Now `param` variable is not pointing to same object as `str`.
+- On `line 1` `param` is assigned to `str`; they are now aliases for each other as they both reference the same string object with value of `'hello'`.
+- On `line 2` we reassign `param` to a new String object. Now `param` variable is not pointing to the same object as `str`.
 - On `line 3` we invoke destructive method call `<<` on String object local variable `param` is referencing, appending string object with value `world` to it.
 - On `line 9` we invoke `p` method and pass in `str` local variable to it to output its value, which is `hello`.
 
@@ -215,14 +215,15 @@ def prefix(str)
   "Mr. " + str
 end
 
-name = 'joe'
+name = 'Joe'
 prefix(name)
 
 puts name
 ```
 
-- This will print out `joe`. 
+- This will print out `Joe`. 
 
 - On `line 2` we use string concatenation by prepending `Mr.` to `str`, thereby creating a new String object. 
-- This new String object created on `line 2` is not captured into a variable to be sued by the method.
-- We invoke `puts` method on `line 8` and pass in `name` argument to it, which is `joe`. This is because the return value of the `prefix` method is not used. 
+- This new String object created on `line 2` is not captured into a variable to be used by the method.
+- We invoke `puts` method on `line 8` and pass in `name` argument to it, which is `Joe`. This is because the return value of the `prefix` method is not used. 
+

@@ -20,7 +20,7 @@ puts "Hello"
 
 - This is method invocation.
 - Since parentheses are optional, you don't need it for code like this.
-- We are passing in a string as an argument to this method.
+- We are passing in a string as an argument to this method to output its value.
 
 You could write this code like this: 
 
@@ -143,7 +143,7 @@ end
 puts str
 ```
 
-- `world`. This is because `str` is being reassigned in the inner scope created by the `do...end` block. `str` now references the String object with value of `hello` and this is what is output to the screen.
+- `world`. This is because `str` is being *reassigned* in the inner scope created by the `do...end` block. `str` now references the String object with value of `hello` and this is what is output to the screen.
 
 What is output here?
 
@@ -156,5 +156,5 @@ end
 puts str
 ```
 
-- `str` is being initialized in the inner scope within the `do...end` block and therefore will not be accessible to the outer scope. This will raise an `undefined local variable or method 'str'`. 
+- `str` is being *initialized* in the inner scope within the `do...end` block and therefore will not be accessible to the outer scope. This will raise an `undefined local variable or method 'str'` exception.
 - The syntax looks exactly the same as assignment but they are very different.

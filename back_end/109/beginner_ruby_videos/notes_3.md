@@ -8,7 +8,7 @@ a += b
 ```
 
 - Two variables, one object from `lines 1-2`
-- Local variable `a` is being initialized and set to reference String object whose value is `hi`.
+- Local variable `a` is being initialized and set to reference a String object whose value is `hi`.
 - Local variable `b` is being initialized and set to reference the same String object that `a` is referencing, which is string object `hi`.
 - On `line 3` `a` is being reassigned to a different object. 
 
@@ -55,7 +55,7 @@ end
 
 - On `line 1` we initialize local variable `arr` and set to it reference an Array object with integers `1-10`. 
 - On `line 2` we initialize local variable `idx` and set it to reference integer `0`.
-- On `lines 5-9` we invoke the `loop` method invocation with the `do...end` after it defining a block and therefore an inner scope. 
+- On `lines 5-9` we invoke the `loop` method invocation and pass in the `do..end` to it as an argument. This defines a block and creates an inner scope. 
 - On `line 6` we invoke the `puts` method and pass in `arr[idx]` to output the value of each element at the current index.
 - On `line 7` we increment the `idx` variable by `1` after each iteration.
 - On `line 8` we use a `break` statement to exit the loop when the integer that `idx` is referencing is equal to the size of the array. `arr.size` returns an integer that represents how many elements are in this array and this is what is being compared to the object `idx` is referencing.
