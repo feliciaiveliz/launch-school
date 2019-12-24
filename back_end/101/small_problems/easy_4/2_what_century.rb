@@ -66,18 +66,21 @@ Algorithm:
 #   end
 # end
 
-def suffix_generator(century)
-  return "th" if century[-2] == "1"
-  return "st" if century[-1] == "1"
-  return "nd" if century[-1] == "2"
-  return "rd" if century[-1] == "3"
-  "th"
+def century(year)
+  century = year / 100 + 1
+  century -= 1 if year % 100 == 0
+  century.to_s + suffix(century)
 end
 
-def century(year)
-  century = (year + 99) / 100
+
+def suffix(century)
+  return "th" if [11, 12, 13].include?(century % 100)
   century = century.to_s
-  century + suffix_generator(century)
+  
+  return "st" if century[-1] == "1"
+  return "nd" if century[-1] == "2"
+  return "rd" if century[-1] == "3" 
+  "th"
 end
 
 p century(2000)
