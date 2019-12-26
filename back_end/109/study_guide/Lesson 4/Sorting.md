@@ -222,4 +222,3 @@ Other methods implement a `<=>` method to compare items:
 - `min_by`
 - `max_by`
 - `minmax_by`
-
