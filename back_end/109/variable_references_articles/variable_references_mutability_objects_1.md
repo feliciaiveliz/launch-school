@@ -27,8 +27,7 @@
 >> true.object_id
 => 20
 
->> n
-nil.object_id
+>> nil.object_id
 => 8
 
 >> "abc".object_id

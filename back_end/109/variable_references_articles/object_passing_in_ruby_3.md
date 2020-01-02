@@ -4,7 +4,7 @@ In Ruby nearly everything is an object. When a method is called with an expressi
 
 The *caller* (or receiver) of a method call- the object on which the method is called, can be thought of as an **implied argument.**
 
-Many operators such as `+`, `*`, `[]`, and `!`are methods and `=` acts like a method. The operands of these operators are arguments, and the operators have return values.
+Many operators such as `+`, `*`, `[]`, and `!` are methods and `=` acts like a method. The operands of these operators are arguments, and the operators have return values.
 
 ***
 

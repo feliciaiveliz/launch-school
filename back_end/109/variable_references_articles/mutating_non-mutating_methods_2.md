@@ -234,7 +234,7 @@ Example with an Array:
 
 ### Concatenation is Mutating
 
-The `#<<` and `#+=` both implement **concatenation**, however they is a huge difference: 
+The `#<<` and `#+=` both implement **concatenation**, however there is a huge difference: 
 
 - `#<<` method is mutating
 - `#+=` operator is non-mutating
@@ -290,6 +290,6 @@ person.age = 23
 
 The fact that Ruby can have methods that mutate its arguments would seem to say that Ruby uses **pass by reference** in some circumstances. Arguments that are **passed by copy** cannot be mutated.
 
-Methods that end with `!` usually indicate that that method can mutate its caller, however not all mutating methods use this convention. Certain operations like **setters** and **indexed assignment** should always be treated as mutating methods. Other like **assignment** and the **assignment operators** (`#+=`, `#*=`) are always non-mutating.
+Methods that end with `!` usually indicate that that method can mutate its caller, however not all mutating methods use this convention. Certain operations like **setters** and **indexed assignment** should always be treated as mutating methods. Others like **assignment** and the **assignment operators** (`#+=`, `#*=`) are always non-mutating.
 
 Immutable objects seem to be passed by value and mutable objects seem to be passed by reference. Assignment can break the binding between an argument name and the object it references. 
