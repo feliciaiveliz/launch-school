@@ -31,3 +31,12 @@ The `do..end` following the `each` method invocation defines a block and is pass
 Local variable `a` is being initialized to a String object with a value of `hello`.
 
 Local variable `b` is being initialized to the same String object that local variable `a` is referencing.
+
+This example demonstrates local variable scoping rules, specifically the fact that a local variable initialized outside of a block is accessible inside the block.
+
+On line 1 we invoke the `puts` method and pass in `greeting` to it as an argument, outputting it's new value, `Hi`.  This line outputs `nil`. 
+
+evaluates to true
+
+###### is truthy
+
