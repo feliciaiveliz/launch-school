@@ -23,18 +23,18 @@ algorithm:
 - return reversed_string, invoke #join to convert to string
 =end
 
-# def string_reverser(string)
-#   reversed_string = []  
-#   string.chars.reverse_each do |char|
-#     reversed_string << char
-#   end
-#   reversed_string.join
-# end
+def string_reverser(string)
+  reversed_string = []  
+  string.chars.reverse_each do |char|
+    reversed_string << char
+  end
+  reversed_string.join
+end
 
 
-# puts string_reverser("hello world") 
-# puts string_reverser("I love my cat")
-# puts string_reverser("hello")
+puts string_reverser("hello world") 
+puts string_reverser("I love my cat")
+puts string_reverser("hello")
 
 # ***
 
@@ -44,23 +44,23 @@ algorithm:
 # output: 
 # 1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz", 11, "Fizz", 13, 14, "FizzBuzz"
 
-# def fizzbuzz(start_num, end_num)
-#   numbers = (start_num..end_num).to_a
-#   words = []
+def fizzbuzz(start_num, end_num)
+  numbers = (start_num..end_num).to_a
+  words = []
 
-#   numbers.each do |num|
-#     if num % 3 == 0 && num % 5 == 0
-#       words << "FizzBuzz"
-#     elsif num % 3 == 0
-#       words << "Fizz"
-#     elsif num % 5 == 0
-#       words << "Buzz"
-#     else 
-#       words << num
-#     end
-#   end
-#   words.join(', ')
-# end
+  numbers.each do |num|
+    if num % 3 == 0 && num % 5 == 0
+      words << "FizzBuzz"
+    elsif num % 3 == 0
+      words << "Fizz"
+    elsif num % 5 == 0
+      words << "Buzz"
+    else 
+      words << num
+    end
+  end
+  words.join(', ')
+end
 
 # puts fizzbuzz(1, 15)
 
