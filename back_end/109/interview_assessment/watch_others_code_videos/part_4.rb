@@ -29,13 +29,13 @@ algorithm:
 - end method
 =end
 
-# def word_cap(string)
-#   string.split.map(&:capitalize).join(' ')
-# end
+def word_cap(string)
+  string.split.map(&:capitalize).join(' ')
+end
 
-# p word_cap('four score and seven years')
-# p word_cap('i love javascript')
-# p word_cap('owls are great hunters')
+p word_cap('four score and seven years')
+p word_cap('i love javascript')
+p word_cap('owls are great hunters')
 
 
 =begin
@@ -68,17 +68,17 @@ algorithm:
 =end
 # require 'date'
 
-# def friday_13th(year)
-#   friday_13ths = 0
-#   (1..12).each do |month|
-#     friday_13ths += 1 if Date.new(year, month, 13).friday? # run puts Date.new(2015, 3, 13) to see what it outputs first before you add anything else
-#   end
-#   friday_13ths
-# end
+def friday_13th(year)
+  friday_13ths = 0
+  (1..12).each do |month|
+    friday_13ths += 1 if Date.new(year, month, 13).friday? # run puts Date.new(2015, 3, 13) to see what it outputs first before you add anything else
+  end
+  friday_13ths
+end
 
-# p friday_13th(2015) == 3
-# p friday_13th(1986) == 1
-# p friday_13th(2019) == 2
+p friday_13th(2015) == 3
+p friday_13th(1986) == 1
+p friday_13th(2019) == 2
 
 # Third Problem
 
@@ -101,9 +101,9 @@ def mathphrase(number_of_operations)
   operations.join(' ').gsub('divided', 'divided by')
 end
 
-# p mathphrase(1)
-# p mathphrase(2)
-# p mathphrase(3)
+p mathphrase(1)
+p mathphrase(2)
+p mathphrase(3)
 
 # Write a program that will generate random engish math problems of varying length.
 

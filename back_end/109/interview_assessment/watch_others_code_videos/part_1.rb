@@ -37,18 +37,18 @@ algorithm:
 - end method
 =end
 
-# def is_prime?(number)
-#   number = number.to_i
-#   return false if number == 1
+def is_prime?(number)
+  number = number.to_i
+  return false if number == 1
 
-#   (2..(number - 1)).each do |i|
-#     return false if number % i == 0
-#   end
-#   true
-# end
+  (2..(number - 1)).each do |i|
+    return false if number % i == 0
+  end
+  true
+end
 
-# p is_prime?(3)
-# p is_prime?(4)
+p is_prime?(3)
+p is_prime?(4)
 
 =begin
 
@@ -81,14 +81,14 @@ algorithm:
 - return the new array at the end of iteration
 =end
 
-# def select_primes(array)
-#   array.select do |number|
-#     is_prime?(number)
-#   end
-# end
+def select_primes(array)
+  array.select do |number|
+    is_prime?(number)
+  end
+end
 
-# p select_primes([1, 2, 3, 4])
-# p select_primes([4, 6, 8, 10])
+p select_primes([1, 2, 3, 4])
+p select_primes([4, 6, 8, 10])
 
 =begin
 Write a method that will take an array of numbers, and return the number of primes in the array.
@@ -115,12 +115,12 @@ algorithm:
 - this will return an integer that represents the number of primes
 =end
 
-# def count_primes(array)
-#   select_primes(array).count
-# end
+def count_primes(array)
+  select_primes(array).count
+end
 
-# p count_primes([1, 2, 3, 4])
-# p count_primes([4, 6, 8, 10])
+p count_primes([1, 2, 3, 4])
+p count_primes([4, 6, 8, 10])
 
 =begin
 
