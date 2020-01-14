@@ -40,6 +40,16 @@ vehicles = [
 ]
 
 def count_occurrences(array)
+  occurrences = array.tally 
+
+  occurrences.each do |word, count|
+    puts "#{word} => #{count}"
+  end
+end
+
+count_occurrences(vehicles)
+
+def count_occurrences(array)
   occurrences_hash = {}
   array.each do |word|
     if occurrences_hash.include?(word)
@@ -77,4 +87,3 @@ def count_occurrences(array)
 end
 
 
-count_occurrences(vehicles)
