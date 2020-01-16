@@ -35,7 +35,6 @@ def time_of_day(time)
   time.strftime('%A %R')
 end
 
-
 p time_of_day(0)
 p time_of_day(-3) 
 p time_of_day(35)

@@ -34,13 +34,13 @@ p word_sizes('') == {}
 
 # or
 
-# def word_sizes(string)
-#   hash = Hash.new(0)
-#   string.split.each do |word|
-#     hash[word.size] += 1
-#   end
-#   hash
-# end
+def word_sizes(string)
+  hash = Hash.new(0)
+  string.split.each do |word|
+    hash[word.size] += 1
+  end
+  hash
+end
 
 
 # p word_sizes('Four score and seven.') == { 3 => 1, 4 => 1, 5 => 1, 6 => 1 }
