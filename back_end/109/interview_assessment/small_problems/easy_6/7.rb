@@ -33,6 +33,14 @@ def halvsies(array)
   [first, second]
 end
 
+# or 
+
+def halvsies(array)
+  middle = (array.size / 2.0).ceil
+  first, second = array[0...middle], array[middle...]
+  [first, second]
+end
+
 def halvsies(array)
   middle = (array.size / 2.0).ceil
   [array[0...middle], array[middle...]]
