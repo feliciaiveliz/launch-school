@@ -1,4 +1,4 @@
-# Rock, Paper, Scissors, Lizard, Spock Bonus Features
+ # Rock, Paper, Scissors, Lizard, Spock Bonus Features
 1. In addition to the normal rock, paper, scissors game, we need to incorporate two options: Lizard and Spock. 
 2. Update program so that user can type 'r' for 'rock', 'p' for 'paper', etc. There will be two 's', resolve it. 
 3. Keep track of player's and computer's score. When either one reaches 5 wins, end the match. 
