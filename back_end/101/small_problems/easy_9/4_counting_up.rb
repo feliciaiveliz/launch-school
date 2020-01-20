@@ -30,7 +30,7 @@ end
 # I forget that you can convert a range to an array. 
 
 def sequence(number)
-  (1..number).to_a
+  (1..number).to_a   # [1 2 3 4 5] 
 end
 
 p sequence(5) 

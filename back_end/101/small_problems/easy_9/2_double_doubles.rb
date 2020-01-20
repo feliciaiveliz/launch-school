@@ -30,19 +30,19 @@ algorithm:
 - end method
 =end
 
-# def twice(integer)
-#   array = integer.to_s.chars
+def twice(integer)
+  array = integer.to_s.chars
 
-#   if array.size.odd?
-#     integer * 2
-#   elsif array.size.even?
-#     middle = (array.size / 2.0).ceil
-#     left = array.slice(0, middle)
-#     right = array.slice(middle, (array.size - middle))
+  if array.size.odd?
+    integer * 2
+  elsif array.size.even?
+    middle = (array.size / 2.0).ceil
+    left = array.slice(0, middle)
+    right = array.slice(middle, (array.size - middle))
     
-#     left == right ? integer : integer * 2
-#   end
-# end
+    left == right ? integer : integer * 2
+  end
+end
 
 # refactored
 

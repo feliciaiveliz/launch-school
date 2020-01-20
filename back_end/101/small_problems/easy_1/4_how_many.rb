@@ -68,6 +68,20 @@ def count_occurrences(arr)
   occur.each_pair { | key, value | puts "#{key} => #{value}"}
 end
 
+count_occurrences(vehicles)
 
+# or 
+
+def count_occurrences(array)
+  occur = {}
+
+  array.each do |element|
+    occur[element] = array.count(element)
+  end
+
+  occur.each do |element, count|
+    puts "#{element} => #{count}"
+  end
+end
 
 count_occurrences(vehicles)

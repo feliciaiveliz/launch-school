@@ -21,6 +21,7 @@ algorithm:
 - if string is not already uppercased, it will return false
 =end
 
+
 def uppercase?(string)
   return false if string.empty? 
   string == string.upcase

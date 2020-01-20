@@ -70,4 +70,13 @@ end
 puts reverse_words('Professional')
 puts reverse_words('Walk around the block')
 puts reverse_words('Launch School')
-   # words_size -= 1
+
+# refactoring after a few weeks
+
+def reverse_words(words)
+  words.split.map {|w| w.size >= 5 ? w.reverse! : w }.join(' ')
+end
+
+puts reverse_words('Professional')
+puts reverse_words('Walk around the block')
+puts reverse_words('Launch School')
