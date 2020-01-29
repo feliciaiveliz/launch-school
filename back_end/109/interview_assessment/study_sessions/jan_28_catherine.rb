@@ -1,23 +1,25 @@
 # Participating with Kris, Nick, Marcos, Alex, Felicia, Catherine
 
 # 1st Example: 
-# a = 7
 
-# loop do 
-#   a = 5
-#   break
-# end
+a = 7
 
-# p a
+loop do 
+  a = 5
+  break
+end
+
+p a
 
 # # 2nd Example:
-# a = "Bob"
 
-# 5.times do |a|
-#   a = "Bill"
-# end
+a = "Bob"
 
-# p a
+5.times do |a|
+  a = "Bill"
+end
+
+p a
 
 # 20 minutes for solving a problem for the interview. 
 
@@ -35,7 +37,7 @@ algorithm:
 - convert the integer to a string to_s
 - create an empty string
 - iterate over the string 
-  - if the number is even
+  - if the number is even 
     - push the integer to the string
   - if the number is odd and the number at (index + 1) is also odd
   - push odd number
@@ -45,21 +47,21 @@ algorithm:
 - return the string
 =end
 
-# def dasherizer(integer)
-#   new_string = ""
-#   array = integer.to_s.chars
+def dasherizer(integer)
+  new_string = ""
+  array = integer.to_s.chars
   
-#   array.each_with_index do |char, index|
-#     if char.to_i.even?
-#       new_string << char
-#     elsif char.to_i.odd? && array[index + 1].to_i.odd?
-#       new_string << char << "-"
-#     else
-#       new_string << char
-#     end
-#   end
-#   new_string    
-# end
+  array.each_with_index do |char, index|
+    if char.to_i.even?
+      new_string << char
+    elsif char.to_i.odd? && array[index + 1].to_i.odd?
+      new_string << char << "-" 
+    else
+      new_string << char
+    end
+  end
+  new_string    
+end
 
 def dasherizer(integer)
   dash_string = ""
