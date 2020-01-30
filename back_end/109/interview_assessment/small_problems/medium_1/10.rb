@@ -8,7 +8,6 @@ input: integer, nth fibonacci number
 output: integer, last digit on fibonacci number
 rules: 
 - use method from previous exercises to compute fib number
-- 
 =end
 
 def fibonacci(n)
