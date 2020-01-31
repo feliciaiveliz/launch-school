@@ -29,17 +29,10 @@ algorithm
   - repeat steps 4-8
 =end
 
-# BLOCKS = %W(BO XK DQ CP NA GT RE FS JW HU VI LY ZM)
-
-# # def block_word?(word)
-# #   BLOCKS.none? {|block| word.upcase.include?(block) }
-# # end
-
-BLOCKS = %w(BO XK DQ CP NA GT RE FS JW HU VI LY ZM).freeze
+BLOCKS = %w(BO XK DQ CP NA GT RE FS JW HU VI LY ZM).freeze # array of strings
 
 def block_word?(string)
-  up_string = string.upcase
-  BLOCKS.none? { |block| up_string.count(block) >= 2 }
+  BLOCKS.none? { |block| string.upcase.count(block) >= 2 }
 end
 
 p block_word?('BATCH') == true
