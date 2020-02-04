@@ -123,3 +123,7 @@ end
 p sum_consecutives([1,4,4,4,0,4,3,3,1])
 p sum_consecutives([1,1,7,7,3])
 p sum_consecutives([-5,-5,7,7,12,0]) ==  [-10,14,12,0]
+
+[1, 2, 3].each do |num|
+  
+end
