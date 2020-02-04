@@ -44,23 +44,19 @@ def substrings_at_start(string)
   substrings
 end
 
+def substrings(string)
+  substrings = []
+  start_index = 0
 
-#   substrings
-# end
-
-# def substrings(string)
-#   substrings = []
-#   start_index = 0
-
-#   loop do 
-#     string.size.times do |index|
-#       substrings << string[start_index..index]
-#     end
-#     start_index += 1
-#     break if start_index == string.size
-#   end
-#   substrings
-# end
+  loop do 
+    string.size.times do |index|
+      substrings << string[start_index..index]
+    end
+    start_index += 1
+    break if start_index == string.size
+  end
+  substrings
+end
 
 # ls solutin
 
