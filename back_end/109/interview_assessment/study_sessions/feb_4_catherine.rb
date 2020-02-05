@@ -69,7 +69,7 @@ algorithm:
 def not_prime?(n)
   return true if n == 1
   (2...n).each do |num|
-    return true if n % num == 0
+    return true if n % num == 0  # a number is NOT prime because it IS divisible by another number: 9 % 3 == 0
   end
   false
 end
