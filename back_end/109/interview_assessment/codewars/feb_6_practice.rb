@@ -1,4 +1,5 @@
 =begin
+Problem 1: Count Odd numbers below n
 
 Given a number n, return the number of positive odd numbers below n, EASY!
 
@@ -32,9 +33,9 @@ end
 p oddCount(7)
 p oddCount(15)
 
-###########################################################################
-
 =begin
+
+Problem 2: Distinct Digit Year
 
 The year of 2013 is the first year after the old 1987 with only distinct digits.
 Now your task is to solve the following problem: given a year number, find the minimum year number which is strictly larger than the given one and has only distinct digits.
@@ -65,9 +66,9 @@ p distinct_digit_year(1987)
 p distinct_digit_year(2013)
 p distinct_digit_year(2229)
 
-###############################################################
-
 =begin
+
+Problem 3: Minimize Sum of Arrays
 
 Given an array of integers , Find the minimum sum which is obtained from summing each Two integers product.
 
@@ -82,7 +83,6 @@ algorithm:
 - remove the first and last elements of the array, and multiply them
 - push the product to the empty array
 - continue until array is empty
-- 
 =end
 
 def min_sum(arr)
@@ -94,12 +94,11 @@ def min_sum(arr)
   out.sum
 end
 
-
 p min_sum([5,4,2,3])
 
-#################################################
-
 =begin
+
+Problem 4: Form the Largest 
 
 Given a number , Return _The Maximum number _ could be formed from the digits of the number given .
 
@@ -118,9 +117,9 @@ def max_number(n)
   n.digits.sort { |a, b| b <=> a }.join.to_i
 end
 
-##############################################################
-
 =begin
+
+Problem 5: Find the Divisors
 
 Create a function named divisors/Divisors that takes an integer n > 1 and returns an array with all of the integer's divisors(except for 1 and the number itself), from smallest to largest. If the number is prime return the string '(integer) is prime'
 
@@ -164,9 +163,9 @@ def divisors(n)
   n.prime? ? "#{n} is prime." : (2..(n - 1)).select { |num| n % num == 0 }
 end
 
-########################################################################
-
 =begin
+
+Problem 6: Find the Next Perfect Square
 
 You might know some pretty large perfect squares. But what about the NEXT one?
 Complete the findNextSquare method that finds the next integral perfect square after the one passed as a parameter. Recall that an integral perfect square is an integer n such that sqrt(n) is also an integer.
@@ -202,10 +201,11 @@ end
 
 p find_next_square(625)
 
-##########################################################
 # 5/6 kyu
 
 =begin
+
+Problem 7: Multiples of 3 or 5
 
 If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
 Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in.
@@ -234,8 +234,9 @@ def solution(number)
   sum
 end
 
-##############################################
 =begin
+
+Problem 7: Delete a Digit
 
 Given an integer n, find the maximal number you can obtain by deleting exactly one digit of the given number.
 
@@ -269,9 +270,9 @@ p delete_digit(152)
 p delete_digit(1001)
 p delete_digit(10)
 
-##############################################
-
 =begin
+
+Problem 8: Alphabetized
 
 Re-order the characters of a string, so that they are concatenated into a new string in "case-insensitively-alphabetical-order-of-appearance" order. Whitespace and punctuation shall simply be removed!
 The input is restricted to contain no numerals and only words containing the english alphabet letters.
