@@ -135,8 +135,6 @@ algorithm:
   - index[0..index - 1]: lowercase + index: capitalized + index[ + 1 to -1]: lowercase
 =end
 
-require 'pry'
-
 def wave(string)
   strings = []
   chars = string.downcase.chars
@@ -256,3 +254,4 @@ end
 
 p pig_it('Pig latin is cool')
 p pig_it('Hello World !')
+
