@@ -97,6 +97,14 @@ def letter_changes(string)
   result.join
 end
 
+string.each_char do |char|
+  if upper.include?(char)
+    result << upper[(upper.index(char) + 3) % 26]
+  elsif lower.include?(char)
+    result << lower[(lower.index(char) + 3) % 26]
+  end
+  
+
 p letter_changes("this long cake@&") == "wklv orqj fdnh@&"
 p letter_changes("Road trip9") == "Urdg wuls9"
 p letter_changes("EMAILZ@gmail.com") == "HPDLOC@jpdlo.frp"
