@@ -103,7 +103,9 @@ string.each_char do |char|
   elsif lower.include?(char)
     result << lower[(lower.index(char) + 3) % 26]
   end
-  
+  result
+end
+
 
 p letter_changes("this long cake@&") == "wklv orqj fdnh@&"
 p letter_changes("Road trip9") == "Urdg wuls9"
