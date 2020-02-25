@@ -7,14 +7,14 @@ If anything in the text isn't a letter, ignore it and don't return it.
 "a" = 1, "b" = 2, etc.
 
 input: string
-output: string
+output: new string
 rules:
 - a = 1, b = 2, ..., z = 26
 - skip chars that are not letters
 - seperate numbers by a space
 problem: 
 - map letters to their position in alphabet
-- convert string into a collection of ind. letters to iterate over
+- convert string into a collection of individual letters to iterate over
 - check if char is a letter
 - if it is, replace it with it's position in alphabet
 - if it is not, skip it
