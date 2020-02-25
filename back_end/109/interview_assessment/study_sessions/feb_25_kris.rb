@@ -62,16 +62,17 @@ algorithm:
 def capitalize(string)
   first_str = ""
   second_str = ""
+  string = string.chars
 
   string.each_with_index do |letter, index|
     index.even? ? first_str << letter.capitalize : first_str << letter
   end
 
   string.each_with_index do |letter, index|
-    index.odd ? second_str << letter.capitalize : second_str << letter
+    index.odd? ? second_str << letter.capitalize : second_str << letter
   end
   
-  
+  [first_str, second_str]
 end
 
 p capitalize("abcdef") == ['AbCdEf', 'aBcDeF']
