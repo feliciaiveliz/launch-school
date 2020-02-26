@@ -54,6 +54,8 @@ p get_sum(-1, 2) == 2  # -1 + 0 + 1 + 2 = 2
 
 =begin
 
+Problem: Form The Minimum
+
 Given a list of digits, return the smallest number that could be formed from these digits, using the digits only once (ignore duplicates).
 
 input: array of integers
@@ -85,6 +87,8 @@ p min_value([4, 8, 1, 4]) == 148
 ######################################
 
 =begin
+
+Problem: Maximum Triplet Sum (Array Series #7)
 
 Given an array/list [] of n integers , find maximum triplet sum in the array Without duplications .
 
