@@ -3,14 +3,14 @@
 
 **7 kyu**
 
-- [x] Minimize Sum of Array (Array Series #1)
+- [x] 1. Minimize Sum of Array (Array Series #1)
 
-2. Product Of Maximums Of Array (Array Series #2)
+- [x] Product Of Maximums Of Array (Array Series #2)
 
-3. Array Leaders (Array Series #3) 
+- [x] Array Leaders (Array Series #3) 
 
-4. Maximum Triplet Sum (Array Series #7)
+- [x] Maximum Triplet Sum (Array Series #7)
 
-5. Form The Minimum
+- [x] Form The Minimum
 
-6. Row Weights
+- [x] Row Weights
