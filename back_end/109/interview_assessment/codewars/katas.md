@@ -3,7 +3,7 @@
 
 **7 kyu**
 
-`[]` Minimize Sum of Array (Array Series #1)
+- [x] Minimize Sum of Array (Array Series #1)
 
 2. Product Of Maximums Of Array (Array Series #2)
 
