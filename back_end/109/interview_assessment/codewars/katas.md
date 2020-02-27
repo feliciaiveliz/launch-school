@@ -8,11 +8,11 @@
 
 - [ ] Maximum Gap (Array Series #4)
 
-- [ ] Nth Smallest Element (Array Series #4)
+- [x] Nth Smallest Element (Array Series #4)
 
-- [ ] Product Array (Array Series #5)
+- [x] Product Array (Array Series #5)
 
-- [ ] Minimum Steps (Array Series #6)
+- [x] Minimum Steps (Array Series #6)
 
 - [x] Maximum Triplet Sum (Array Series #7)
 
