@@ -4,7 +4,7 @@ There is an array with some numbers. All numbers are equal except for one. Try t
 find_uniq([ 1, 1, 1, 2, 1, 1 ]) == 2
 find_uniq([ 0, 0, 0.55, 0, 0 ]) == 0.55
 
-It’s guaranteed that array contains at least 3 numbers.
+It's guaranteed that array contains at least 3 numbers.
 =end
 
 =begin
@@ -130,7 +130,6 @@ def dashatize(integer)
     end.join
 end
 
-num ? num.to_s.scan(/[02468]+|[13579]/).join("-") : "nil"
+# num ? num.to_s.scan(/[02468]+|[13579]/).join("-") : "nil"
 
-
-https://www.codewars.com/kata/58223370aef9fc03fd000071
+# https://www.codewars.com/kata/58223370aef9fc03fd000071
