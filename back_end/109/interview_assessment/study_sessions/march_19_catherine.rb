@@ -49,17 +49,17 @@
 #   end
 # end
 
-def digital_root(number)
-  return number if number < 10
-  number = number.to_s.chars.map {|s| s.to_i }.sum
-  digital_root(number)
-end
+# def digital_root(number)
+#   return number if number < 10
+#   number = number.to_s.chars.map {|s| s.to_i }.sum
+#   digital_root(number)
+# end
 
-p digital_root(10) == 1
-p digital_root(16) == 7
-p digital_root(942) == 6
-p digital_root(132189) == 6
-p digital_root(493193) == 2
+# p digital_root(10) == 1
+# p digital_root(16) == 7
+# p digital_root(942) == 6
+# p digital_root(132189) == 6
+# p digital_root(493193) == 2
 
 # Find the missing letter
 # Write a method that takes an array of consecutive (increasing) letters as input and that returns the missing letter in the array.
@@ -98,18 +98,25 @@ ALGORITHM:
   - return 'letter' if it's not included
 =end
 
-def find_missing_letter(input_array)
-  lower = ('a'..'z').to_a
-  # upper = ('A'..'Z').to_a
+def find_missing_letter(array)
+  lower_letters = ('a'..'z').to_a
+  upper_letters = ('A'..'Z').to_a
   
-  first_letter_index = lower.index(input_array[0])
-  alphabet_section = lower.slice(first_letter_index, (input_array.size + 1))
-  
+  if array.join == array.join.downcase
+    first_letter_index = lower_letters.index(array[0])
+    alphabet_section = lower_letters.slice(first_letter_index, (array.size + 1))
+  else
+    first_letter_index = upper_letters.index(array[0])
+    alphabet_section = upper_letters.slice(first_letter_index, (array.size + 1))
+  end
+
   alphabet_section.each do |letter|
-    return letter if !input_array.include?(letter)
+    return letter if !array.include?(letter)
   end
 end
 
+p find_missing_letter(['O', 'P', 'Q', 'S']) == 'R'
+p find_missing_letter(['F', 'G', 'H', 'J']) == 'I'
 p find_missing_letter(["a","b","c","d","f"]) == "e"
 p find_missing_letter(["b","d"]) == "c"
 p find_missing_letter(["a","b","d"]) == "c"
@@ -139,29 +146,29 @@ algorithm: divide num1 by num2, check for decimals, round to nearest whole numbe
 
 =end
 
-def division_stringified(num1, num2)
-  quotient = (num1 / num2.to_f).round
-  return quotient.to_s if quotient < 1000
-  result = []
+# def division_stringified(num1, num2)
+#   quotient = (num1 / num2.to_f).round
+#   return quotient.to_s if quotient < 1000
+#   result = []
   
-  quotient.to_s.chars.reverse.each_with_index do |char, idx|
-    result << char
-    result << ',' if (idx + 1) % 3 == 0
-  end
+#   quotient.to_s.chars.reverse.each_with_index do |char, idx|
+#     result << char
+#     result << ',' if (idx + 1) % 3 == 0
+#   end
   
-  result.reverse!
+#   result.reverse!
   
-  if result[0] == ','
-    result.shift
-  end
+#   if result[0] == ','
+#     result.shift
+#   end
   
-  result.join
-end
+#   result.join
+# end
 
-p division_stringified(2, 3) == "1"
-p division_stringified(5, 2) == "3"
-p division_stringified(7, 3) == "2"
-p division_stringified(6874, 67) == "103"
-p division_stringified(503394930, 43) == "11,706,859"
-p division_stringified(1, 10) == "0"
-p division_stringified(100000, 1) == "100,000"
+# p division_stringified(2, 3) == "1"
+# p division_stringified(5, 2) == "3"
+# p division_stringified(7, 3) == "2"
+# p division_stringified(6874, 67) == "103"
+# p division_stringified(503394930, 43) == "11,706,859"
+# p division_stringified(1, 10) == "0"
+# p division_stringified(100000, 1) == "100,000"
