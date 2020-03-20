@@ -22,6 +22,22 @@
 #   s.chunk { |n| n }.map { |array| array.last.inject(:+) }
 # end
 
+def sum_consecutives(array)
+  previous = 0
+  result = []
+
+  array.each do |num|
+    if num == previous
+      result[-1] += num
+    else
+      previous = num
+      result << num
+    end
+  end
+  result
+end
+
+
 # p sum_consecutives([1,4,4,4,0,4,3,3,1]) == [1,12,0,4,6,1]
 # p sum_consecutives([1,1,7,7,3]) == [2,14,3]
 # p sum_consecutives([-5,-5,7,7,12,0]) == [-10,14,12,0]
