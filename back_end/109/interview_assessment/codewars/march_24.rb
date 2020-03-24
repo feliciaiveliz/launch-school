@@ -43,3 +43,36 @@ p string_expansion('3abc') == 'aaabbbccc'       # correct
 p string_expansion('3d332f2a') == 'dddffaa'
 p string_expansion('abcde') == 'abcde'
 p string_expansion('') == ''
+
+# Mexican Wave | 6 kyu
+
+# In this simple Kata your task is to create a function that turns a string into a Mexican Wave. You will be passed a string and you must return that string in an array where an uppercase letter is a person standing up.
+
+=begin
+
+input: string
+output: array of string, mexican wave
+problem:
+- for each letter, capitalize current letter
+- lowercase all the rest of letters
+  - put whole string into array repeating this pattern
+ALGORITHM:
+- split string into array of chars using #chars and #map and #with_index
+  - replace original letter with capitalized version
+    - string[index].upcase
+  - repeat for each word
+- return array
+=end
+
+def wave(string)
+  result = []
+  
+  string.chars.each_with_index do |_, index|
+    string = string.downcase
+    string[index] = string[index].upcase
+    result << string
+  end
+  result
+end
+
+p wave("hello") == ["Hello", "hEllo", "heLlo", "helLo", "hellO"]
