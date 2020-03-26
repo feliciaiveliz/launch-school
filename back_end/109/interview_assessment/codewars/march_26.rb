@@ -192,3 +192,61 @@ p calculate_tip(20, "Excellent") == 4
 p calculate_tip(20, "hi") == 'Rating not recognised'
 p calculate_tip(107.65, "GReat") == 17
 p calculate_tip(20, "great!") == 'Rating not recognised'
+
+=begin
+
+input: array of integers
+output: integer, first non-consecutive integer
+problem:
+- put first integer of array into another array
+- iterate over the input array;
+  - if current number minus the last number in the other array
+    - is != 1, return number
+ALGORITHM:
+- initialize 'previous' to arr.shift
+- iterate over input array:
+  - if n - previous != 1 or -1
+    return n
+  - assign previous to 'n'
+- nil
+=end
+
+def first_non_consecutive(arr)
+  previous = arr.shift
+  
+  arr.each do |n|
+    if (n - previous != 1)
+      return n
+    else
+      previous = n
+    end
+  end
+  nil
+end
+
+def first_non_consecutive(arr)
+  arr.each_cons(2) { |a, b| return b if b - a > 1 }
+end
+
+p first_non_consecutive([1,2,3,4,6,7,8]) #== 6
+
+=begin
+
+input: array of various data types
+output: array with all even indexed items removed
+problem:
+- create a new array
+- iterate over input array
+- if item is at an odd index, add it to new array
+ALGORITHM:
+- iterate using #select and #wit_index, given item and index:
+  - add item to result if index is #even
+=end
+
+def remove_every_other(arr)
+  arr.select.with_index { |_, index| index.even? }
+end
+
+def triple_trouble(one, two, three)
+  one.chars.map.with_index { |_, idx| one[idx] + two[idx] + three[idx] }.join
+end
