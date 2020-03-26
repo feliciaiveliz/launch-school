@@ -353,3 +353,50 @@ p duplicate_encode("din") == "((("
 p duplicate_encode("recede") == "()()()"
 p duplicate_encode("Success") == ")())())"
 p duplicate_encode("(( @") == "))(("
+
+# Given a non-negative number, return the next bigger polydivisible number, or an empty value like null or Nothing.
+
+# A number is polydivisible if its first digit is cleanly divisible by 1, its first two digits by 2, its first three by 3, and so on. There are finitely many polydivisible numbers.
+
+=begin
+
+input: integer
+output: polydivisible integer
+problem:
+- create a loop:
+  - increment number by 1
+  - find size of number, use it to find divisibles, save to 'size'
+    - create an index to keep track of what number were checking
+example:
+- 11
+- size of 11 is 2: save as size
+- start_index to 0
+- put 11 in array, digits reverse
+- array.to_s[0, 1].to_i % 1 == 0, check next numbers
+- array.to_s[0, 2].to_i % 2
+- array.to_s[0, 3].to_i % 3
+=end
+
+def next_sum(number)
+  start_index = 0
+  start_size = 0
+  divisibility = 1
+  
+  loop do 
+    number += 1
+    size = number.to_s.size
+    array = number.digits.reverse
+  
+    if array.to_s[start_index, start_size].to_i % divisibility == 0
+        start_index += 1
+        start_size += 1
+        divisibility += 1
+    else
+      
+end
+
+next_num(0) == 1
+next_num(10) == 12
+next_num(11) == 12
+next_num(1234) == 1236
+next_num(123220) == 123252
