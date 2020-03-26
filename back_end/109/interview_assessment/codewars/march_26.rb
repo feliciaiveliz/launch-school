@@ -111,3 +111,84 @@ def guess_blue(blue_start, red_start, blue_pulled, red_pulled)
 end
 
 # breaking it down step by step makes it easier to keep track of variables.
+
+# Write a function that rearranges an integer into its largest possible value.
+
+=begin
+input: integer
+output: integer, largest possible value
+problem:
+- puts digits into array using #digits
+- sort digits using #sort b <=> a
+- convert to string using #join
+- convert to integer using #to_i
+=end
+
+def super_size(n)
+  n.digits.sort { |a, b| b <=> a }.join.to_i
+end
+
+p super_size(123456) # 654321
+p super_size(105)    # 510
+p super_size(12)     # 21
+
+# Complete the function, which calculates how much you need to tip based on the total amount of the bill and the service.
+
+# You need to consider the following ratings:
+
+# Terrible: tip 0%
+# Poor: tip 5%
+# Good: tip 10%
+# Great: tip 15%
+# Excellent: tip 20%
+# The rating is case insensitive (so "great" = "GREAT"). If an unrecognised rating is received, then you need to return:
+
+# "Rating not recognised" in Javascript, Python and Ruby...
+# ...or null in Java
+# ...or -1 in C#
+# Because you're a nice person, you always round up the tip, regardless of the service.
+
+=begin
+
+input: integer: bill total, rating: string
+output: integer or string, tip amount or error message
+problem:
+- downcase all ratings
+- multiply bill total by tip percentage based on rating
+- convert tip percentage by multiplying by 0.01
+- return tip amount after rounding up
+- if rating is not recognized, return error message
+ALGORITHM:
+- case statement
+  - if rating == "Poor".downcase
+    - return bill * .05 #ceil
+  - if rating.downcase == "Excellent".downcase
+    - return bill * .10 #ceil
+  - etc.
+- else
+  - 'Rating not recognised'
+=end
+
+def calculate_tip(bill, rating)
+  rating.downcase!
+  
+  if rating == "Terrible".downcase
+    return 0
+  elsif rating == "Poor".downcase
+    return (bill * 0.05).ceil
+  elsif rating == "Good".downcase
+    return (bill * 0.10).ceil
+  elsif rating == "Great".downcase
+    return (bill * 0.15).ceil
+  elsif rating == "Excellent".downcase
+    return (bill * 0.20).ceil
+  else
+    return "Rating not recognised"
+  end
+end
+
+p calculate_tip(30, "poor") == 2
+p calculate_tip(20, "Excellent") == 4
+p calculate_tip(20, "hi") == 'Rating not recognised'
+p calculate_tip(107.65, "GReat") == 17
+p calculate_tip(20, "great!") == 'Rating not recognised'
