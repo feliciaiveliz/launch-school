@@ -9,12 +9,11 @@
 input: array of integers
 output: all pairs of integers that have a difference of 2
 problem:
-- wat should be done with the input?
+- what should be done with the input?
   - sort integers from smallest to largest
   - create 'all_pairs' array (larger array)
   - iterate over input array: 
     - take pairs from input array, add to 'all_pairs' array
-  - remove first number from array, add to end
     - create pairs, add all pairs to 'all_pairs'
 - iterate over the pairs and check if 'b' - 'a' is 1
         - if yes, select the pair
@@ -22,7 +21,6 @@ ALGORITHM:
 - intiialize 'pairs' (larger array)
 - initilaze 'all_pairs' (result array)
 - sort array using #sort!
-- 
 - given 'pairs':
   - iterate using #select:
     - given pair: if array[1] - array[0] == 1, select pair
@@ -47,6 +45,13 @@ def twos_difference(array)
   all_pairs
 end
 
+def twos_difference(array)
+  array.sort.combination(2).select { |pair| pair[1] - pair[0] == 2 }
+end
+
+def twos_difference(array)
+  array.sort.combination(2).select { |a, b| b - a == 2 }
+end
 
 p twos_difference([1, 2, 3, 4]) == [[1, 3], [2, 4]]
 p twos_difference([1, 3, 4, 6]) == [[1, 3], [4, 6]]
