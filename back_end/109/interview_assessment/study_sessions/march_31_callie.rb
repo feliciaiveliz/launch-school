@@ -53,17 +53,11 @@ def kebabize(str)
   str = str.delete('^A-Za-z')
   
   str.each_char do |letter|
-    if letter == letter.upcase
-      result << '-' << letter.downcase
-    else
-      result << letter
-    end
+    letter == letter.upcase ? result << '-' << letter.downcase : result << letter
   end
-  if result.start_with?('-')
-    return result[1..-1]
-  else
-    return result
-  end
+
+  return result[1..-1] if result.start_with?('-')
+  return result
 end
 
 =begin
@@ -89,4 +83,42 @@ ALGO:
     - result << letter
   - end
 - return 'result'
+=end
+
+def duplicate_count(text)
+  count = 0
+  duplicates = []
+  text.downcase!
+  
+  text.each_char do |letter|
+    next if duplicates.include?(letter)
+    if text.count(letter) > 1
+      count += 1
+      duplicates << letter
+    end
+  end
+  count
+end
+
+=begin
+
+input: string
+output: integer, number of letters that occur more than once
+problem:
+- downcase string
+- iterate over string, given letter, 
+  - count # of each letter
+  - if count > 1, add 1 to 'count'
+  - add that letter to an array to keep track of duplicate letters
+  - skip letters that are already included in array duplicates
+- return 'count'
+ALGO:
+- initialize 'count' to 0
+- intiialize 'duplicates' to []
+- downcase string and iterate using #each:, given letter
+  - skip iteration if letter is included in 'duplicates'
+  - if string count of letter > 1
+    - incrmenet count by 1
+    - add letter to duplicates
+- return 'count'
 =end

@@ -98,7 +98,6 @@ problem:
 ALGORITHM:
 - initialize 'result' to []
 - iterate over 'field' using #each, given 'row'
-  - skip iteration if subarray does not include 1
   - if 'row' includes 1, use #index on 'field',pass in 'row'
     - push this index to 'result'
   - use #find_index to find the element's index that equals 1
@@ -107,15 +106,12 @@ ALGORITHM:
 
 def mine_location(field)
   result = []
-  
   field.each do |row|
-    next if !row.include?(1)
     if row.include?(1)
       result << field.index(row)
       result << row.find_index { |n| n == 1 }
     end
   end
-  
   result 
 end
 
