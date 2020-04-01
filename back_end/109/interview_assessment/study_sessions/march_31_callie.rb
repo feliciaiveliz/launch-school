@@ -16,31 +16,30 @@ problem:
 ALGO:
 - initialize 'alphabet' to 'a'..'z' 
 - intialize 'word_scores' to {}
-- initialize 'highest_score' to 0
 - iterate using #split, given word:
-- initialize 'word_score' to 0
-  - iterate using #each_char, given letter
-    - increment word_score += alphabet index of 'letter' + 1
-  - end
-- update the hash with key as 'word' and value as 'word_score'
-- use #values on 'word_scores' and #max, save to 'highest_score'
+  - initialize 'word_score' to 0
+    - iterate using #each_char, given letter
+      - increment word_score += alphabet index of 'letter' + 1
+    - end
+  - update the hash with key as 'word' and value as 'word_score'
+- end
+- use #values on 'word_scores' and #max
 - use #key on 'word_scores' to return the highest scoring word
 =end
 
 def alphabet_score(string)
   alphabet = ('a'..'z').to_a
-  word_scores = {}
-  highest_score = 0
+  scores = {}
   
   string.split.each do |word|
     word_score = 0
     word.each_char do |letter|
       word_score += alphabet.index(letter) + 1
     end
-    word_scores[word] = word_score
+    scores[word] = word_score
   end
-  highest_score = word_scores.values.max
-  word_scores.key(highest_score)
+
+  scores.key(scores.values.max)
 end
 
 p alphabet_score('man i need a taxi up to ubud') == 'taxi'
@@ -121,4 +120,4 @@ ALGO:
     - incrmenet count by 1
     - add letter to duplicates
 - return 'count'
-=end
+=en
