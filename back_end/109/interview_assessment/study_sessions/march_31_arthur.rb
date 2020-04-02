@@ -150,8 +150,8 @@ def nth_prime(nth)
   primes[-1]
 end
 
-p nth_prime(6) #== 13
-# p nth_prime(2) #== 3
+p nth_prime(6) == 13
+p nth_prime(2) == 3
 p nth_prime(4) == 7
 p nth_prime(5) == 11
-# p nth_prime(1) == 2
+p nth_prime(1) == 2
