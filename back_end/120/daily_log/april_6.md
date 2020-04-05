@@ -7,6 +7,6 @@
 **Time Spent**: 
 
 **Goal Met**? 
- - [ ]
+- [ ] 
 
  
