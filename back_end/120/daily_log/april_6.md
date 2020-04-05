@@ -7,6 +7,6 @@
 **Time Spent**: 
 
 **Goal Met**? 
-- [ ] 
+- [ ] (4 hours minimum)
 
  
