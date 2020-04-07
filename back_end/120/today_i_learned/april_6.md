@@ -1,0 +1,7 @@
+- I learned that classes are basically molds that objects are created from. 
+- Multiple objects can be created from the same class but each object will have different attributes
+- An object will have a state or states and behaviors
+- Instance variables track an objects state
+- Instance methods expose an objects behavior or information
+- Modules are collections of code behavior that can be used by classes via mixins
+- Classes use the keyword 'include' to use a Modules behaviors
