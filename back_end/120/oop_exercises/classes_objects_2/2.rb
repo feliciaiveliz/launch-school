@@ -1,24 +1,24 @@
-# Identify Yourself (Part 1)
+# Hello Chloe!
 
-# Using the following code, add a method named #identify that returns its calling object.
+# Using the following code, add an instance method named #rename that renames kitty when invoked.
 
 class Cat
   attr_accessor :name
-
+  
   def initialize(name)
     @name = name
   end
 
-  def identify
-    self
+  def rename(new_name)
+    self.name = new_name
   end
 end
 
 kitty = Cat.new("Sophie")
-p kitty.identify
+puts kitty.name  # Sophie
+kitty.rename("Chloe")
+puts kitty.name  # Chloe
 
-# We used 'self' to define class methods and to modify instance variables. 'self' is used because it refers to the calling object. 
-# 'self' is the same as invoking 'kitty'.
-
-p kitty.identify # => #<Cat:0x007f932b06dba8 @name="Sophie">
-p kitty          # => #<Cat:0x007f932b06dba8 @name="Sophie">
+# To modify the value using a setter method, we need to add additional syntax. 
+# To invoke a setter method, we need to use 'self'
+# We do this so that ruby knows the difference between initializing a local variable and invoking a setter method.
