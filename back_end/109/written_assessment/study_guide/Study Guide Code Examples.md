@@ -48,4 +48,4 @@ end
 
 - On `line 1` we initialize local variable `a` and set it to reference String object with a value of `Hello`.
 - On `lines 3-7`, we enter a conditional `if/else` statement. 
-- Local variable `a` is `truthy` in the if condition, so `Hello is truthy` is output. 
+- Local variable `a` is `truthy` in the conditional statement, so `Hello is truthy` is output. 

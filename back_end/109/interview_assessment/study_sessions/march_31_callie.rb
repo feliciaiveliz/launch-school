@@ -18,12 +18,10 @@ ALGO:
 - intialize 'word_scores' to {}
 - iterate using #split, given word:
   - initialize 'word_score' to 0
-    - iterate using #each_char, given letter
+    - iterate using #each_char, given letter => ADD UP LETTER SCORES
       - increment word_score += alphabet index of 'letter' + 1
-    - end
   - update the hash with key as 'word' and value as 'word_score'
-- end
-- use #values on 'word_scores' and #max
+- use #values on 'word_scores' and #max => FIND HIGHEST NUMBER
 - use #key on 'word_scores' to return the highest scoring word
 =end
 
