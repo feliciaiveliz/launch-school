@@ -2,9 +2,9 @@
 
 ### Weekly Hours
 
-April 6 - 10: 
+April 6 - 10: 20 hours, 5 minutes
 
-April 13 - 17: 
+April 13 - 17: 11 hours 49 minutes
 
 April 20 - 24: 
 

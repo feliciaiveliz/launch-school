@@ -99,7 +99,7 @@ class GoodDog < Animal
   end
 end
 
-bruno = GoodDog.new("brown")        # => #<GoodDog:0x007fb40b1e6718 @color="brown", @name="brown"
+bruno = GoodDog.new("brown")        # =><GoodDog:0x007fb40b1e6718 @color="brown", @name="brown"
 ```
 
 Extracting common methods to a superclass is great way to model concepts that are naturally hierarchical. The goal of DRY code is to put the right behavior in the right class so that we don't need to repeat code in multiple classes. We can imagine that all `Fish` objects are related to animals that live in water, so maybe a `swim` method should be in the `Fish` class. We can also have a class called `Mammal` with objects that have warm blood, so we can create a method called `warm_blooded?` and have it return `true`. Therefore, the `Cat` and `Dog` objects will have access to the `warm_blooded?` method which is automatically inherited from `Mammel` class but they won't have access to the methods in the `Fish` class. 

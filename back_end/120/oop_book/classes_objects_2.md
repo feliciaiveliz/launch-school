@@ -67,7 +67,7 @@ class GoodDog
   end
 end
 
- = GoodDog.new("Sparky", 4)
+sparky = GoodDog.new("Sparky", 4)
 puts sparky.age # => 28
 ```
 

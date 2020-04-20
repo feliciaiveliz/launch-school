@@ -72,9 +72,9 @@ fido = GoodDog.new("Fido")
 puts fido.speak # => "Woof!"
 ```
 
-This `fido` object can also perform `GoodDog` behaviors. All objects of the same class have the same behaviors, but they contains different states, in this case the differing state is the name.
+This `fido` object can also perform `GoodDog` behaviors. All objects of the same class have the same behaviors, but they contain different states, in this case the differing state is the name.
 
-If we wanted to say something like "Sparky says woof!", we could change our `speak` method. All of the methods in the class `GoodDog` are instance method, so that means we have access to instance methods. 
+If we wanted to say something like "Sparky says woof!", we could change our `speak` method. All of the methods in the class `GoodDog` are instance methods, so that means we have access to instance methods. 
 
 ```ruby
 def speak
@@ -211,7 +211,7 @@ def speak
 end
 ```
 
-Instead of referencing the variable directly, use the `name` getter method created earlier, which is given to use by `attr_accessor`:
+Instead of referencing the variable directly, use the `name` getter method created earlier, which is given to us by `attr_accessor`:
 
 ```ruby
 def speak
