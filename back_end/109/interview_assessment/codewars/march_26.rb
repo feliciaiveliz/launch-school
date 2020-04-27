@@ -81,6 +81,7 @@ def mine_location(field)
     next if !area.include?(1)
     bomb_area << field.index(area) << area.index(1)
   end
+  
   bomb_area
 end
 
