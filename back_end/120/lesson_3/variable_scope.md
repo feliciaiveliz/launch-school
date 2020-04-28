@@ -22,7 +22,7 @@ This means that the instance variable is accessible in an object's instance meth
 
 ```ruby
 class Person
-  def initialize(n) # initialized outside of te 'get_name' method, but still available to it
+  def initialize(n) # initialized outside of the 'get_name' method, but still available to it
     @name = n
   end
 end
