@@ -10,7 +10,7 @@
 - finish LS exercises (accessor methods, easy 1/2, medium 1)
 - finish notes in lesson 2/3/4
 
-**Time Spent**: 3 hours 35 minutes
+**Time Spent**: 4 hours 17 minutes
 
 **Goal Met**? 
-- [ ] (4 hours)
+- [x] (4 hours)
