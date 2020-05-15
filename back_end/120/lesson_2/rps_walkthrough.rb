@@ -6,7 +6,7 @@ class Player
     @move = nil
     set_name
   end
-
+  
   def set_name
     if human
       n = ""
