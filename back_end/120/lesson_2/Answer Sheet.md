@@ -161,22 +161,22 @@ p my_cat.name # "Booboo"
 
 How do you reference and set an instance variable within an instance method? What is the difference between doing this vs using getters and setters?
 
-- It's better to reference a getter or setter method within an instance method so that we do not bypass any functionality that those methods might provide. If we access the instance variable directly, we don't have access to those methods that might need to modify it in some way. 
+- It's better to reference a getter or setter method within an instance method so that we do not bypass any functionality that those methods might provide. If we access the instance variable directly, we don't have access to those methods that might need to modify the value of the instance variable in some way. 
 
 ```ruby
 class Dog   
-  attr_accessor :name
+  attr_writer :name
     
   def initialize(name)
     @name = name
   end
     
   def name
-    @name.upcase
+    @name.capitalize
   end
     
   def greeting
-    "My name is #{name}"
+    "My name is #{name}!"
   end
 end
 
@@ -212,6 +212,30 @@ puts pepe.greeting # => "My name is pepe!"
 #### What is class inheritance and give an example?
 
 Class inheritance is when a class inherits behaviors of another class. Class inheritance is a way to extract common behaviors shared by multiple classes into a superclass. The class that is inheriting behavior from another class is called the `subclass` and the class it inherits from is called the `superclass`.  The `<` symbol is used to show that a class is inheriting from another class. All methods in the superclass are available now to the subclasses. The subclass inherits the behaviors and attributes of its superclass. Use class inheritance if there is a `is-a'`relationship with a class and a superclass. For example: a dog `is an` animal. 
+
+```ruby
+class Animal
+  attr_reader :name
+
+  def initialize(name)
+    @name = name
+  end
+
+  def speak
+    "Hello"
+  end
+end
+
+class Dog < Animal
+end
+
+dog = Dog.new("Winston")
+
+p dog.name  # "Winston"
+p dog.speak # "Hello"
+```
+
+
 
 ```ruby
 class Animal
@@ -271,7 +295,7 @@ puts Bird.new.fly # "I'm flying!"
 
 #### What is polymorphism?
 
-Polymorphism is the ability of different objects to respond differently to same methods. This can be achieved through inheritance (class or interface) and through duck typing. Prewritten code can be used for new purposes. 
+Polymorphism is the ability of different objects to respond differently to the same method invocation. This can be achieved through inheritance (class or interface) and through duck typing. Prewritten code can be used for new purposes. 
 
 Example of polymorphism through class inheritance: 
 
@@ -294,7 +318,7 @@ end
 
 array_of_animals = [Animal.new, Dog.new, Cat.new]
 array_of_animals.each do |animal|
-  animal.speak
+  puts greet_animal(animal)
 end
 
 # hello
@@ -353,7 +377,7 @@ end
 array_of_animals = [Snake.new, Bird.new, Cat.new]
 
 array_of_animals.each do |animal|
-  puts animal.speak
+  puts greet_animal(animal)
 end
 
 # Hiss
