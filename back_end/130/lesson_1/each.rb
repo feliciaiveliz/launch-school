@@ -12,5 +12,6 @@ def each(array)
 end
 
 each([1, 2, 3, 4, 5]) do |num|
-  puts num
+  puts num * 2
 end
+
