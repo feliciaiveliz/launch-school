@@ -135,76 +135,15 @@ list = TodoList.new("Felicia's Todos")
 list.add(todo1)
 list.add(todo2)
 list.add(todo3)
-list.add(1) # error
-
-# <<
-# same behavior as add
-
-# Interrogating the list
-
-# size
 list.size # returns 3
-
-# first
 list.first # todo1
-
-# last
 list.last # todo3
-
-# to_a
 list.to_a # array of all items
-
-# done?
 list.done? # true if all items are done, false
-
-# ---- Retrieving an item in the list ----
-
-# item_at
-list.item_at                    # raises ArgumentError
-list.item_at(1)                 # returns 2nd item in list (zero based index)
-list.item_at(100)               # raises IndexError
-
-# ---- Marking items in the list -----
-
-# mark_done_at
-list.mark_done_at               # raises ArgumentError
-list.mark_done_at(1)            # marks the 2nd item as done
-list.mark_done_at(100)          # raises IndexError
-
-# mark_undone_at
-list.mark_undone_at             # raises ArgumentError
+# list.item_at(1)                 # returns 2nd item in list (zero based index)
 list.mark_undone_at(1)          # marks the 2nd item as not done,
-list.mark_undone_at(100)        # raises IndexError
-
-# done!
 list.done!                      # marks all items as done
-
-# ---- Deleting from the list -----
-
-# shift
 list.shift                      # removes and returns the first item in list
-
-# pop
 list.pop                        # removes and returns the last item in list
-
-# remove_at
-list.remove_at                  # raises ArgumentError
-list.remove_at(1)               # removes and returns the 2nd item
-list.remove_at(100)             # raises IndexError
-
-# ---- Outputting the list -----
-
-# to_s
+# list.remove_at(1)               # removes and returns the 2nd item
 list.to_s                      # returns string representation of the list
-
-# ---- Today's Todos ----
-# [ ] Buy milk
-# [ ] Clean room
-# [ ] Go to gym
-
-# or, if any todos are done
-
-# ---- Today's Todos ----
-# [ ] Buy milk
-# [X] Clean room
-# [ ] Go to gym
