@@ -1,9 +1,5 @@
 ## Study Guide 
 
-you call the devil and he shall appear 
-
--mom
-
 ### Classes and Objects
 
 Classes are blueprints for objects. They define what an object should be and what it should be able to do. Classes are the molds and you create objects from those molds. You define a class by using the `class` keyword followed by the class name starting with a capital letter. To finish a class definition, use the `end` keyword.
