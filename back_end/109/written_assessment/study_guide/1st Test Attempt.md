@@ -4,13 +4,13 @@ def greeting
 end
 ```
 
-From lines 1-3 we are defining method `greeting`. 
+From lines 1-3 we are defining a method called `greeting`. 
 
 Within this method definition, we invoke the `puts` method and pass in a string object with a value of `hello` to it. 
 
 This method definition `greeting` outputs the string object `hello` and returns `nil`. 
 
-This code example demonstrates method definition. 
+This code example demonstrates a simple method definition that outputs a value of a variable and returns something, in this case `nil`. 
 
 ***
 
@@ -18,7 +18,7 @@ This code example demonstrates method definition.
 [1, 2, 3].each { |num| puts num }
 ```
 
-From lines 1-3 we are invoking the `Array#each` method on the array object `[1, 2, 3]`. We pass the `{}` to `each` as an argument. This defines a block and creates an inner scope.
+From `lines 1-3` we are invoking the `Array#each` method on the array object `[1, 2, 3]`. We pass the `{}` to `each` as an argument. This defines a block and creates an inner scope.
 
 From within the scope of this method invocation, we pass the block a parameter `|num|`. This local variable represents the element at the current iteration and is what the element is assigned to when it gets passed into the block.
 

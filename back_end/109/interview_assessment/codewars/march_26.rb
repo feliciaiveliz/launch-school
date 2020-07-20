@@ -68,18 +68,18 @@ ALGORITHM:
 - initialize 'bomb_area' to []
 - use #each to iterate over general array, given subarray:
   - find 1:
+    - if subarray does not include 1: skip iteration
     - use #index to find area that equals 1
     - if 1 is found, push to 'bomb_area': index of subarray, index of 1
-    - if subarray does not include 1: skip iteration
 - return bomb_area
 =end
 
 def mine_location(field)
   bomb_area = []
   
-  field.each do |area|
-    next if !area.include?(1)
-    bomb_area << field.index(area) << area.index(1)
+  field.each do |row|
+    next if !row.include?(1)
+    bomb_area << field.index(row) << row.index(1)
   end
   
   bomb_area

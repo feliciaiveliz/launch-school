@@ -20,32 +20,25 @@ One of the keys to this problem is identifying and extracting the various separa
 Individually, each element is not that complex, but when first approaching the problem the problem as a whole may appear complex because it hasn't been broken down yet.
 The process of extracting the different elements of the will mostly take place during the Algorithm step, but it's important that that step be informed by the understanding of the problem formed at this step.
 
-p difference_of_two([1, 2, 3, 4]) ==  [[1, 3], [2, 4]]
-p difference_of_two([4, 1, 2, 3]) == [[1, 3], [2, 4]]
-p difference_of_two([1, 23, 3, 4, 7]) == [[1, 3]]
-p difference_of_two([4, 3, 1, 5, 6]) == [[1, 3], [3, 5], [4, 6]]
-p difference_of_two([2, 4]) == [[2, 4]]
-p difference_of_two([1, 4, 7, 10, 13]) == []
-
 Examples and Test Cases
 
 Examining the test cases should confirm a number of things from the problem description as well as answering various questions raised during the Problem stage and providing some implicit requirements:
-The input array only contains integers
-The input array always contains at least two integers
-The output array contains nested arrays containing the pairs of integers that have a difference of two
-If there are no matching pairs the output array should be empty
-If there is only one matching pair, the output should still contain that pair as a sub-array
-The order of the integers in input array has no impact on the order of the integers and pairs in the output array
-The integers in the sub-arrays of the output array are ordered numerically in ascending order
-The sub-arrays themselves are in ascending numerical order
-These last three points should suggest that it doesn't matter which
+- The input array only contains integers
+- The input array always contains at least two integers
+- The output array contains nested arrays containing the pairs of integers that have a difference of two
+- If there are no matching pairs the output array should be empty
+- If there is only one matching pair, the output should still contain that pair as a sub-array
+- The order of the integers in input array has no impact on the order of the integers and pairs in the output array
+- The integers in the sub-arrays of the output array are ordered numerically in ascending order
+- The sub-arrays themselves are in ascending numerical order
+- These last three points should suggest that it doesn't matter which
 
 Data Structures
 
 There's nothing overly complex in the input and output data
-Input is an unsorted array or integers
-Output is a sorted nested array of integer pairs that have a difference of two.
-There's a question around whether the data needs to be temporarily represented in some way while being processed, though this depends in large part on the algorithm.
+- Input is an unsorted array or integers
+- Output is a sorted nested array of integer pairs that have a difference of two.
+- There's a question around whether the data needs to be temporarily represented in some way while being processed, though this depends in large part on the algorithm.
 
 Algorithm
 
@@ -56,6 +49,12 @@ This criteria is that there is a difference of two, so a subtraction operation i
 Sort the sub-array
 Sorting the result array
 
+p difference_of_two([1, 2, 3, 4]) ==  [[1, 3], [2, 4]]
+p difference_of_two([4, 1, 2, 3]) == [[1, 3], [2, 4]]
+p difference_of_two([1, 23, 3, 4, 7]) == [[1, 3]]
+p difference_of_two([4, 3, 1, 5, 6]) == [[1, 3], [3, 5], [4, 6]]
+p difference_of_two([2, 4]) == [[2, 4]]
+p difference_of_two([1, 4, 7, 10, 13]) == []
 =end
 
 def difference_of_two(arr)

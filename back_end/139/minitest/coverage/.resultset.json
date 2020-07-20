@@ -1,0 +1,23 @@
+{
+  "Minitest": {
+    "coverage": {
+      "/home/felicia/Launch School/launch-school/back_end/139/minitest/car.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          7,
+          null,
+          null,
+          1,
+          4,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1595193056
+  }
+}
