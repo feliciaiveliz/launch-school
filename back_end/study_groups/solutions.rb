@@ -74,23 +74,24 @@ p letter_changes('xyz') == ('abc')
 
 =begin
 input: integer
-output: string
-rules: 
-- place a dash between odd numbers
-- inputs will be valid positive integers only
-data structure: string, array
-algorithm: 
-- convert the integer to a string to_s
-- create an empty string
-- iterate over the string 
-  - if the number is even 
-    - push the integer to the string
-  - if the number is odd and the number at (index + 1) is also odd
-  - push odd number
-  - place a dash after it
-  - push the next number
-- continue for the rest of string
-- return the string
+output: string, integer with dashes between odd numbers
+problem: 
+- iterate over the string for each number
+- if odd, and previous number is odd
+  - add a dash then the number
+- if not, add the number as is
+- return string
+algorithm:
+- initialize 'result' to ""
+- put number into array using #digits and #reverse
+- iterate over the array using #each
+- given 'n'
+  - if 'n' is odd and result[-1].to_i is odd?
+    - add '-' and 'n'.to_s to result
+  - else 
+    - result << n.to_s
+  - end
+- return result
 =end
 
 def dasherizer(integer)
@@ -123,6 +124,18 @@ def dasherizer(integer)
   dash_string
 end
 
+def dasherizer(number)
+  result = ""
+  number.digits.reverse.each do |n|
+    if n.odd? && result[-1].to_i.odd?
+      result << '-' << n.to_s
+    else
+      result << n.to_s
+    end
+  end
+  result
+end
+
 p dasherizer(2112) == '21-12'
 p dasherizer(201105742) == '201-105-742'
 p dasherizer(123456789) == '123456789'
@@ -145,15 +158,16 @@ problem:
 - total up letter scores to find total word score
 - find the highest scoring word
 ALGO:
-- initialize 'alphabet' to 'a'..'z' 
-- intialize 'word_scores' to {}
-- iterate using #split, given word:
-  - initialize 'word_score' to 0
-    - iterate using #each_char, given letter => ADD UP LETTER SCORES
-      - increment word_score += alphabet index of 'letter' + 1
-  - update the hash with key as 'word' and value as 'word_score'
-- use #values on 'word_scores' and #max => FIND HIGHEST NUMBER
-- use #key on 'word_scores' to return the highest scoring word
+- initialize 'alphabet' to range: 'a'..'z'
+- initialize 'word_scores' to {}
+- split string into array of words using #split and #each
+- initialize 'word_score' to 0
+- split word into characters using #each_char
+  - given letter
+    - increment word_score by letter position using #index: alphabet.index(leter) + 1
+- update 'word_scores' with word as key and word_score as value
+- find highest number using #values and #max
+- return the word using #key
 =end
 
 def alphabet_score(string)
