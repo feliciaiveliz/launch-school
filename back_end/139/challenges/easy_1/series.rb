@@ -1,10 +1,17 @@
 =begin
-input: number string
-output: array of subarrays that contains sections of 'number' specified by a section
-algo:
-- convert string to integer
-- call #digits and #reverse 
-- call #each_cons on the number to generate the array of subarrays
+input: string number
+output: array of subarrays that contains sections of sliced number
+problem:
+- slice string number into sections specified by 'number'
+- return each section as a subarray within a larger array
+algorithm:
+- split series into an array of chars using #chars
+- convert each string into an integer using #map and #to_i
+- define 'slices'
+  - raise an Argument error if the number is bigger than the 'series' 
+  - invoke #each_cons and pass in 'number' to specify size
+  - invoke #to_a to convert enumerator to an array
+  - return result
 =end
 
 class Series

@@ -62,3 +62,58 @@ class Scrabble
     scrabble_score
   end
 end
+
+###########################################
+
+## 2nd (and better) attempt
+
+=begin
+
+input: string or nil
+output: integer, scrabble score
+problem:
+- any invalid input is scored as 0
+- downcase all strings
+- add up each letter value to compute a words total points
+algorithm:
+- initialize 'letter_values' to {}:
+  - array of letters as keys | integers as points
+- initialize 'score' to 0
+- return 0 if string.nil? or if string contains anything but a-z
+- downcase word
+- split word into chars using #each_char, given 'letter':
+  - iterate over 'letter_values' hash using #each, given 'letters' and 'points':
+    - score += letter_values[letter] if letters.include?(letter)
+- return 'score'
+=end
+
+POINTS = {
+  %w(A E I O U L N R S T) => 1,
+  %w(D G) => 2,
+  %w(B C M P) => 3,
+  %w(F H V W Y) => 4,
+  %w(K) => 5,
+  %w(J X) => 8,
+  %w(Q Z) => 10 
+}
+
+class Scrabble
+  def initialize(word)
+    @word = word
+  end
+
+  def self.score(word)
+    Scrabble.new(word).score
+  end
+
+  def score
+    score = 0
+    return 0 if @word.nil?
+    @word.upcase.each_char do |letter|
+      POINTS.each do |letters, points|
+        score += POINTS[letters] if letters.include?(letter)
+      end
+    end
+    score
+  end
+end
