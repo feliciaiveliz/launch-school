@@ -40,6 +40,10 @@ class OddWords
     @sentence = sentence
   end
 
+  def self.reverse!(string)
+    OddWords.new(string).reverse!
+  end
+  
   def reverse!
     clean_words = @sentence.delete('^a-z ').strip
     clean_words = clean_words.split.map.with_index do |word, idx|
