@@ -35,10 +35,23 @@ class OddWords
   end
 end
 
+class OddWords
+  def initialize(sentence)
+    @sentence = sentence
+  end
+
+  def reverse!
+    clean_words = @sentence.delete('^a-z ').strip
+    clean_words = clean_words.split.map.with_index do |word, idx|
+      idx.odd? ? word.reverse : word
+    end.join(' ')
+    @sentence[-1] == '.' ? clean_words << '.' : clean_words
+  end
+end
 p OddWords.new('').reverse! == ''
 p OddWords.new('.').reverse! == '.'
-p OddWords.new(' pizza.').reverse! #== 'pizza.'
-p OddWords.new('whats the matter with kansas').reverse! #== 'whats eht matter htiw kansas'
-p OddWords.new('i rather  hang out with. my  cat  .').reverse! #== 'i rehtar hang tuo with ym cat.'
-p OddWords.new('felicia  iveliz   khan  bacon').reverse! #== 'felicia zilevi khan nocab'
+p OddWords.new(' pizza.').reverse! == 'pizza.'
+p OddWords.new('whats the matter with kansas').reverse! == 'whats eht matter htiw kansas'
+p OddWords.new('i rather  hang out with. my  cat  .').reverse! == 'i rehtar hang tuo with ym cat.'
+p OddWords.new('felicia  iveliz   khan  bacon').reverse! == 'felicia zilevi khan nocab'
 
