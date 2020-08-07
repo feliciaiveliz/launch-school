@@ -1,16 +1,19 @@
 =begin
-input: string integer
-output: decimal integer
+input: string number
+output: integer octal number
+problem:
+- multiply each digit starting from right by 0, 1, etc by 8
+- add all new digits together to form octal number
 algorithm:
+- return 0 if the number is anything but 0-7
+- initialize 'BASE' to 8
 - initialize 'decimal' to 0
-- initialize 'counter' to 0
-- convert string to integer
-- convert integer to an array of integers
-- iterate:
-  - given current number: current_number*(8**counter)
-  - increment value of 'decimal' by above calculation
-  - increment 'counter' by 1
-- return 'decimal'
+- convert string into number using #digits
+- reverse number
+- iterate using #each_with_index:
+- given 'n' and index:
+  - increment 'decimal' by n * (BASE**index)
+- return decimal
 =end
 
 class Octal
