@@ -189,3 +189,71 @@ p alphabet_score('man i need a taxi up to ubud') == 'taxi'
 p alphabet_score('what time are we climbing up the volcano') == 'volcano'
 p alphabet_score('take me to semynak') == 'semynak'
 p alphabet_score('aa b') == 'aa'
+
+####################################################
+
+=begin
+
+input: array of arrays, with 0s and 1s
+output: array of two integers, row index of mine, and column index of mine location
+problem:
+- iterate over larger array, given subarray:
+  - find element that is equal to 1
+  - return index of current array in the larger array
+  - return index of the mine location in the current array
+- return both indexes in an array
+ALGORITHM:
+- initialize 'result' to []
+- iterate over 'field' using #each, given 'row'
+  - if 'row' includes 1, use #index on 'field',pass in 'row'
+    - push this index to 'result'
+  - use #find_index to find the element's index that equals 1
+- return 'result'
+=end
+
+def mine_location(field)
+  result = []
+  field.each do |row|
+    if row.include?(1)
+      result << field.index(row)
+      result << row.find_index { |n| n == 1 }
+    end
+  end
+  result 
+end
+
+###################################3
+
+input: string
+output: new string
+rules: 
+- for char of each sequence should be capitalized
+- the rest of the letters are lowercased
+- the sequences are seperated by "-"
+- the char's position in the str determines how many chars are printed
+  - a is first, a is printed once
+algorithm: 
+- create a new array
+- split the str argument into an array of chars
+- save this to a variable
+- return the size of the string
+  - this size will be used to calc. how many letters are printed
+- for the size of the string, iterate that many times
+- push the current letter captialized to the array
+- plus the letter lowercased (n) times to the array
+- once iteration is done, join the array into a string
+- each sequence will be joined by a "-"
+- return the array
+=end
+
+def accum(string)
+  string.chars.map.with_index do |letter, index|
+    (letter * (index + 1)).capitalize
+  end.join("-")
+end
+
+#################
+
+p sum_consecutives([1,4,4,4,0,4,3,3,1])
+p sum_consecutives([1,1,7,7,3])
+p sum_consecutives([-5,-5,7,7,12,0]) ==  [-10,14,12,0]
