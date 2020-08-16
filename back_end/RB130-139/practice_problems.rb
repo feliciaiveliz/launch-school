@@ -26,7 +26,7 @@ p exclaim(["hi", "bye"]) { |n| n + value }
 
 def exclaim(array, &block) 
   value = '!'
-  array.map(&block)
+  array.map(&block) # { |n| n + value }
 end
 
 value = '!!!'

@@ -44,6 +44,7 @@ class Meetup
     meetup_schedule.each do |date|
       meetup_date = Date.new(@year, @month, date)
       final_date = meetup_date if meetup_date.wday == day_number
+      break if final_date != 0 && ![1, 3, 5, 7, 8, 10, 12].include?(@month)
     end
     final_date
   end
