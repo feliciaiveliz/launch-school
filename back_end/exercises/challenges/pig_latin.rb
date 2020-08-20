@@ -23,6 +23,9 @@ algorithm:
       - flatten word and join
   - rest of cases
 =end
+# vowels = ['a','e','i','o','u','yt', 'xr'] += 'ay'
+# TWO_LETTER_WORDS = ['qu', 'ch', '*qu', 'th',  'xe']
+# THREE_LETTER_WORDS = ['thr', 'sch']
 
 class PigLatin
   def self.translate(word)
