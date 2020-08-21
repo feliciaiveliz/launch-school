@@ -19,4 +19,15 @@ def step(start_point, end_point, step)
   current_value
 end
 
+def step(first, last, step)
+  counter = 1
+  
+   until counter > last
+    yield(counter)
+    counter += step
+  end
+  
+  counter
+end
+
 step(1, 10, 3) { |value| puts "value = #{value}" }
