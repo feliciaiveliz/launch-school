@@ -60,9 +60,11 @@ Style/EmptyLiteral:
   Description: Prefer literals to Array.new/Hash.new/String.new.
   Enabled: false
 
+# rubocop:disable Style/FrozenStringLiteralComment
 Style/FrozenStringLiteralComment:
   Enabled: false
   Description: Require the addition of the frozen string literal comment.
+# rubocop:enable Style/FrozenStringLiteralComment
 
 Style/GuardClause:
   Description: Check for conditionals that can be replaced with guard clauses.

@@ -18,6 +18,7 @@ class DNA
   #   end
   #   count
   # end
+  
   def hamming_distance(other_strand)
     @strand.zip(other_strand.chars).select { |array| array.none?(nil) }.count { |a1, a2| a1 != a2 }
   end

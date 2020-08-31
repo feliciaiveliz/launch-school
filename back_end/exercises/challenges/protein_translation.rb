@@ -43,35 +43,36 @@ PROTEINS = {
   %w(UAA UAG UGA) => 'STOP'
 }
 
-class Translation
-  def self.of_codon(input_codon)
-    PROTEINS.each do |codon, protein|
-      return protein if codon.include?(input_codon)
-    end
-  end
+# class Translation
+#   def self.of_codon(input_codon)
+#     PROTEINS.each do |codon, protein|
+#       return protein if codon.include?(input_codon)
+#     end
+#   end
 
-  def self.of_rna(strand)
-    raise InvalidCodonError if strand =~ /[^ACGU]/
+#   def self.of_rna(strand)
+#     raise InvalidCodonError if strand =~ /[^ACGU]/
 
-    codons = []
-    proteins = [] 
-    stop_codon = 0
+#     codons = []
+#     proteins = [] 
+#     stop_codon = 0
 
-    until strand.empty?
-      codons << strand.slice!(0, 3)
-    end
+#     until strand.empty?
+#       codons << strand.slice!(0, 3)
+#     end
 
-    codons.each do |codon|
-      PROTEINS.each do |codon_array, protein|
-        proteins << protein if codon_array.include?(codon)
-      end
-    end
+#     codons.each do |codon|
+#       PROTEINS.each do |codon_array, protein|
+#         proteins << protein if codon_array.include?(codon)
+#       end
+#     end
 
-    if proteins.include?('STOP')
-      stop_codon = proteins.index('STOP')
-      proteins.slice!(stop_codon..-1)
-    end
+#     if proteins.include?('STOP')
+#       stop_codon = proteins.index('STOP')
+#       proteins.slice!(stop_codon..-1)
+#     end
 
-    proteins
-  end
-end
+#     proteins
+#   end
+# end
+
