@@ -222,7 +222,7 @@ def mine_location(field)
   result 
 end
 
-###################################3
+###################################
 
 input: string
 output: new string
