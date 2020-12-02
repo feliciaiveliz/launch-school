@@ -1,11 +1,11 @@
 require 'date'
 
-TEENTH_DAYS = [13, 14, 15, 16, 17, 18, 19]
-FIRST_WEEK = [1, 2, 3, 4, 5, 6, 7]
-SECOND_WEEK = [8, 9, 10, 11, 12, 13, 14]
-THIRD_WEEK = [15, 16, 17, 18, 19, 20, 21]
-FOURTH_WEEK = [22, 23, 24, 25, 26, 27, 28]
-LAST_WEEK = [23, 24, 25, 26, 27, 28, 29, 30, 31]
+TEENTH_DAYS = [13, 14, 15, 16, 17, 18, 19].freeze
+FIRST_WEEK = [1, 2, 3, 4, 5, 6, 7].freeze
+SECOND_WEEK = [8, 9, 10, 11, 12, 13, 14].freeze
+THIRD_WEEK = [15, 16, 17, 18, 19, 20, 21].freeze
+FOURTH_WEEK = [22, 23, 24, 25, 26, 27, 28].freeze
+LAST_WEEK = [23, 24, 25, 26, 27, 28, 29, 30, 31].freeze
 
 WEEKDAYS = {
   :monday => 1,
@@ -15,7 +15,7 @@ WEEKDAYS = {
   :friday => 5,
   :saturday => 6,
   :sunday => 0 
- }
+}.freeze
 
 class Meetup  
   def initialize(month, year)
@@ -40,7 +40,7 @@ class Meetup
                       end
 
     final_date = 0
-    
+
     meetup_schedule.each do |date|
       meetup_date = Date.new(@year, @month, date)
       final_date = meetup_date if meetup_date.wday == day_number
@@ -49,5 +49,3 @@ class Meetup
     final_date
   end
 end
-
-
