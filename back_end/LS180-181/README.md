@@ -1,0 +1,1 @@
+This repository contains all the coursework and exercises for Launch School's SQL: Database Foundations course as part of the back-end Core Curriculum.
