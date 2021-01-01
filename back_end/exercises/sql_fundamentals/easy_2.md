@@ -1,4 +1,4 @@
-## Easy 2
+## DML/DDL/DCL
 
 DML/DDL/DCL Part 1
 
