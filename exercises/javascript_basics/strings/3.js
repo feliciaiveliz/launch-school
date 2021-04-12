@@ -1,12 +1,12 @@
 function repeat(number, string) {
-  counter = 0;
+  result = ''
 
-  while {
-    string += string;
-    counter += 1
+  while (number > 0) {
+    result += string;
+    number -= 1;
   }
 
-  return string
+  return result;
 }
 
-console.log(repeat(3, 'hi'));
+console.log(repeat(3, 'ha'));
