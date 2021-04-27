@@ -11,3 +11,11 @@ for (let vocabIdx = 0; vocabIdx < vocabulary.length; vocabIdx++) {
     console.log(words[wordIdx]);
   }
 }
+
+// My solution
+
+for (let i = 0; i < vocabulary.length; i += 1) {
+  for (let j = 0; j <= vocabulary[i].length; j += 1) {
+    console.log(vocabulary[i][j]);
+  }
+}
