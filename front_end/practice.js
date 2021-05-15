@@ -1,11 +1,17 @@
-let vocabulary = [
-  ['happy', 'cheerful', 'merry', 'glad'],
-  ['tired', 'sleepy', 'fatigued', 'drained'],
-  ['excited', 'eager', 'enthused', 'animated']
-];
+// let count = [1, 2, 3];
+// function pop(array) {
+//   let result = array[array.length - 1];
+//   array.length = array.length - 1;
+//   return result;
+// }
 
-for (let i = 0; i < vocabulary.length; i += 1) {
-  for (let j = 0; j <= vocabulary[i].length; j += 1) {
-    console.log(vocabulary[i][j]);
-  }
-}
+let count = [1, 2, 3];
+
+let pop = array => {
+  let result = array[array.length - 1];
+  array.length = array.length - 1;
+  return result;
+};
+
+console.log(pop(count));
+console.log(count);

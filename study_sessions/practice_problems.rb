@@ -111,3 +111,27 @@ end
 p sort_string("is2 Thi1s T4est 3a") #== "Thi1s is2 3a T4est"
 p sort_string("4of Fo1r pe6ople g3ood th5e the2") == "Fo1r the2 g3ood 4of th5e pe6ople"
 p sort_string("") == ""
+
+########################################################################################
+
+# Consider the word "abode". We can see that the letter a is in position 1 and b is in position 2. In the alphabet, a and b are also in positions 1 and 2. Notice also that d and e in abode occupy the positions they would occupy in the alphabet, which are positions 4 and 5.
+#
+# Given an array of words, return an array of the number of letters that occupy their positions in the alphabet for each word. For example,
+#
+# solve(["abode","ABc","xyzD"]) = [4, 3, 1]
+# See test cases for more examples.
+#
+# Input will consist of alphabet characters, both uppercase and lowercase. No spaces.
+
+solve(["abode","ABc","xyzD"]) == [4, 3, 1]
+solve(["abide","ABc","xyz"]) == [4, 3, 0]
+solve(["IAMDEFANDJKL","thedefgh","xyzDEFghijabc"]) == [6, 5, 7]
+solve(["encode","abc","xyzD","ABmD"]) == [1, 3, 1, 3]
+
+########################################################################################
+
+# Write a function that takes a single string (word) as argument. The function must return an ordered list containing the indexes of all capital letters in the string.
+
+console.log(capitals('CodEWaRs')) == [0,3,4,6]
+
+#######################################################################################

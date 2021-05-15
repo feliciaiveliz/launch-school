@@ -11,19 +11,19 @@ rules:
 - ignore anything that's not a letter, add it to string as is
 - if letter is capital letter, add 3rd letter following it as capital
 data structures: string, array
-problem: 
+problem:
 - What do i want to do with the input?
   - map letters in alphabet with their positions
   - iterate over the string and replace each letter with it's 3rd follow. letter
   - add punct/digits to str as it is, then move on to the next char
-  - if we add 3 to current letter index, and it 's greater than or equal to array size, 
+  - if we add 3 to current letter index, and it 's greater than or equal to array size,
     start over from beginning of alphabet
 algorithm:
 - create an array of upper letters
 - create array of lower letters
 - create an empty array to add letters to
 - split the string into an array of chars
-- iterate: 
+- iterate:
   - if the char is included in the lower array
     - assign to index the index of the letter i need (3rd)
     - add it's 3rd following letter to the new array
@@ -38,7 +38,7 @@ def letter_changes(string)
   upper = ("A".."Z").to_a
   lower = ("a".."z").to_a
   result = []
-  
+
   string.each_char do |char|
     if upper.include?(char)
       index = (upper.index(char) + 3) % 26
@@ -75,7 +75,7 @@ p letter_changes('xyz') == ('abc')
 =begin
 input: integer
 output: string, integer with dashes between odd numbers
-problem: 
+problem:
 - iterate over the string for each number
 - if odd, and previous number is odd
   - add a dash then the number
@@ -88,7 +88,7 @@ algorithm:
 - given 'n'
   - if 'n' is odd and result[-1].to_i is odd?
     - add '-' and 'n'.to_s to result
-  - else 
+  - else
     - result << n.to_s
   - end
 - return result
@@ -97,17 +97,17 @@ algorithm:
 def dasherizer(integer)
   new_string = ""
   array = integer.to_s.chars
-  
+
   array.each_with_index do |char, index|
     if char.to_i.even?
       new_string << char
     elsif char.to_i.odd? && array[index + 1].to_i.odd?
-      new_string << char << "-" 
+      new_string << char << "-"
     else
       new_string << char
     end
   end
-  new_string    
+  new_string
 end
 
 def dasherizer(integer)
@@ -115,7 +115,7 @@ def dasherizer(integer)
   array = integer.to_s.chars
 
   array.each_with_index do |char, index|
-    if char.to_i.odd? && array[index + 1].to_i.odd? 
+    if char.to_i.odd? && array[index + 1].to_i.odd?
       dash_string << char << "-"
     else
       dash_string << char
@@ -173,7 +173,7 @@ ALGO:
 def alphabet_score(string)
   alphabet = ('a'..'z').to_a
   scores = {}
-  
+
   string.split.each do |word|
     word_score = 0
     word.each_char do |letter|
@@ -219,20 +219,20 @@ def mine_location(field)
       result << row.find_index { |n| n == 1 }
     end
   end
-  result 
+  result
 end
 
 ###################################
 
 input: string
 output: new string
-rules: 
+rules:
 - for char of each sequence should be capitalized
 - the rest of the letters are lowercased
 - the sequences are seperated by "-"
 - the char's position in the str determines how many chars are printed
   - a is first, a is printed once
-algorithm: 
+algorithm:
 - create a new array
 - split the str argument into an array of chars
 - save this to a variable
@@ -257,3 +257,41 @@ end
 p sum_consecutives([1,4,4,4,0,4,3,3,1])
 p sum_consecutives([1,1,7,7,3])
 p sum_consecutives([-5,-5,7,7,12,0]) ==  [-10,14,12,0]
+
+# let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+#
+# function solve(array) {
+#   let result = [];
+#
+#   for (let i = 0; i < array.length; i++) {  // return result
+#     let word = array[i].toLowerCase();
+#     let count = 0;
+#
+#     for (let j = 0; j < word.length; j++) { // increment count variable
+#       let letter = word[j];
+#       if (j === alphabet.indexOf(letter)) {
+#         count += 1;
+#       }
+#     }
+#     result.push(count) // add count to result
+#   }
+#
+#   return result;
+# }
+
+##########################################################################
+
+# var capitals = function (word) {
+# 	word = word.split('');
+#   let result = [];
+#
+#   for (let i = 0; i < word.length; i++) {
+#     if (word[i] == word[i].toUpperCase()) {
+#       result.push(i);
+#     }
+#   }
+#
+#   return result;
+# };
+#
+# console.log(capitals('CodEWaRs')) == [0,3,4,6]
