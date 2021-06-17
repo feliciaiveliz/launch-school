@@ -1,9 +1,5 @@
-let obj = {
-  foo: { a: "hello", b: "world" },
-  bar: ["example", "mem", null, { xyz: 6 }, 88],
-  qux: [4, 8, 12]
-};
+if (1 === 1) {
+  var a = 'foo';
+}
 
-obj.bar[3].xyz = 606;
-
-console.log(obj);
+console.log(a);
