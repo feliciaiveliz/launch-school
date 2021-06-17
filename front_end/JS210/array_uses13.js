@@ -19,3 +19,17 @@ console.log(uniqueElements([1, 2, 4, 3, 4, 1, 5, 4]));
 // save the new number and push it into the array
 // if the number is the same, skip past it to the next number
 // return result
+
+function uniqueElements(array) {
+  let result = [];
+
+  for (let i = 0; i < array.length; i += 1) {
+    if (result.includes(array[i])) {
+      continue;
+    }
+    result.push(array[i]);
+  }
+  return result;
+}
+
+console.log(uniqueElements([1, 2, 4, 3, 4, 1, 5, 4]));

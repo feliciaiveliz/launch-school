@@ -1,12 +1,13 @@
-function slice(array, start, end) {
-  result = [];
+function splice(array, startIdx, count) {
+  let result = [];
 
-  for (let idx = start; idx < end; idx++) {
+  for (let idx = startIdx; idx <= count; idx += 1) {
     result.push(array[idx]);
   }
 
-  return result;
+  return array - result;
 }
 
-console.log(slice([1, 2, 3, 4, 5], 0, 2));                      // [ 1, 2 ]
-console.log(slice(['a', 'b', 'c', 'd', 'e', 'f', 'g'], 1, 3));  // [ 'b', 'c' ]
+let count = [1, 2, 3, 4, 5, 6, 7, 8];
+console.log(splice(count, 2, 5));
+console.log(count);
